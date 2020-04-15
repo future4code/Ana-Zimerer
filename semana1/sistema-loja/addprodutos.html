@@ -11,46 +11,53 @@
         <div class="cabeçalho">
            <font color="#FF0000"> <font family ="Calibri"><h1> RESTAURANTE DAJU </h1> </font> </font> 
         </div>  
-        <div>            
-           <font size="4px" color="red" family="Arial">
-           <p><a href="#">   ESTOQUE   </a><a><a href="#">   PRODUTOS  </a><a href="#">   FUNCIONÁRIOS   </a><a href="#">   CLIENTES   </a> <p>
-           </font>         
-        </div>
+        <div>  
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/index.html">  HOME   </a>
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/estoque.html">  ESTOQUE   </a> 
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/addprodutos.html"> PRODUTOS   </a> 
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/funcionarios.html">   FUNCIONÁRIOS   </a> 
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/clientes.html">   CLIENTES </a>     
+        </div>   
       </center>
     <!--fim do menu compartilhado -->
 
     <!--Adicionando produtos-->
 
-    <h3 align= "center">Produto</h3>
-    <form action="#" align="center"> 
-        <div> 
+    <h3 align= "center">Produtos</h3>
+    
+        <form align="center"><div> 
             <label>Selecione a opção desejada:</label>
-            <input type="radio" nome="cadastrarNovo" value="cadastrar" selected> Cadastrar novo produto
-            <input type="radio" nome="atualizarQtde" value="atualizar"> Atualizar estoque
+            <input type="radio" nome="opcao" value=""> Cadastrar novo produto
+            <input type="radio" nome="opcao" value=""> Atualizar estoque
             <!--Opção Cadastrar deixa ativo todos os campos
                 Opção Atualizar estoque deixa ativo somente os campos quantidade e faz busca na descrição-->
-        </div>
+            </div> </form>
         <br>
+        <form action="#" align="center"> 
         <div class="forms">
-            <label>Código: </label> 
-            <input type= "number" placeholder="000"> 
+            <label>Setor: </label> 
+            <select name="select" placeholder="setores">
+                <option value="setorMassas" selected>Massas</option> 
+                <option value="setorTortas">Tortas</option>
+                <option value="setorCarnes">Carnes</option>
+            </select> 
         </div> <br>
         <div class="forms">
             <label>Descrição: </label> 
-            <input type= "txt" placeholder="nome do produto"> 
+            <input type= "txt" placeholder="Nome do produto"> 
         </div> <br>
         <div class="forms">
             <label>Preço: </label> 
-            <input type= "text" placeholder="R$ 0,00"> 
+            <input type= "text" placeholder="Adicione o preço"> 
         </div> <br>
         <div class="forms">
             <label>Quantidade: </label> 
-            <input type= "number" placeholder="00"> 
-        </div> <br>
+            <input type= "number" placeholder="Selecione a qtde"> 
+        </div> <br> 
 
         <div class="forms">
             <label>Imagem: </label> 
-            <input type= "file" placeholder="selecione sua imagem"> 
+            <input type= "file" placeholder="Selecione sua imagem"> 
         </div> <br>    
         <button type="submit"> ENVIAR </button> 
     </form>
