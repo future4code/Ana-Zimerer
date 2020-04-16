@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+       <!--menu compartilhado-->
+    <center>
+        <div class="cabeçalho">
+           <font color="#FF0000"> <font family ="Calibri"><h1> RESTAURANTE DAJU </h1> </font> </font> 
+        </div>  
+        <div>  
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/index.html">  HOME   </a>
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/estoque.html">  ESTOQUE   </a> 
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/addprodutos.html"> PRODUTOS   </a> 
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/funcionarios.html">   FUNCIONÁRIOS   </a> 
+            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/clientes.html">   CLIENTES </a>     
+        </div>   
+      </center>
+    <!--fim do menu compartilhado -->
+
+    <!--Adicionando produtos-->
+
+    <h3 align= "center">Produtos</h3>
+    
+        <form align="center"><div> 
+            <label>Selecione a opção desejada:</label>
+            <input type="radio" nome="opcao" value=""> Cadastrar novo produto
+            <input type="radio" nome="opcao" value=""> Atualizar estoque
+            <!--Opção Cadastrar deixa ativo todos os campos
+                Opção Atualizar estoque deixa ativo somente os campos quantidade e faz busca na descrição-->
+            </div> </form>
+        <br>
+        <form action="#" align="center"> 
+        <div class="forms">
+            <label>Setor: </label> 
+            <select name="select" placeholder="setores">
+                <option value="setorMassas" selected>Massas</option> 
+                <option value="setorTortas">Tortas</option>
+                <option value="setorCarnes">Carnes</option>
+            </select> 
+        </div> <br>
+        <div class="forms">
+            <label>Descrição: </label> 
+            <input type= "txt" placeholder="Nome do produto"> 
+        </div> <br>
+        <div class="forms">
+            <label>Preço: </label> 
+            <input type= "text" placeholder="Adicione o preço"> 
+        </div> <br>
+        <div class="forms">
+            <label>Quantidade: </label> 
+            <input type= "number" placeholder="Selecione a qtde"> 
+        </div> <br> 
+
+        <div class="forms">
+            <label>Imagem: </label> 
+            <input type= "file" placeholder="Selecione sua imagem"> 
+        </div> <br>    
+        <button type="submit"> ENVIAR </button> 
+    </form>
+    <br>
+ </body>
+ </html>
+ 
+ 
