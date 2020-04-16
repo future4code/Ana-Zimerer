@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Estoque Daju</title>
 </head>
 <body>
     <!--menu compartilhado-->
-    <center>
-        <div class="cabeçalho">
-           <font color="#FF0000"> <font family ="Calibri"><h1> RESTAURANTE DAJU </h1> </font> </font> 
-        </div>               
-        <div> 
-            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/index.html">  HOME   </a>         
-            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/estoque.html">  ESTOQUE   </a> 
-            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/addprodutos.html"> PRODUTOS   </a> 
-            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/funcionarios.html">   FUNCIONÁRIOS   </a> 
-            <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/clientes.html">   CLIENTES </a>       
-        </div>   
-      </center>
+    <!--Div do cabeçalho: Nome da empresa e links do menu-->
+    <div class="cabecalho">        
+        <div id="nomeDaEmpresa"> 
+          <h3>   RESTAURANTE DAJU </h3>
+        </div>  
+       
+        
+        <div class="linksDoMenu">
+            <nav id="menuInicial">
+
+              <li>  
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/index.html">  HOME   </a>           
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/estoque.html">  ESTOQUE   </a> 
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/addprodutos.html"> PRODUTOS   </a> 
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/funcionarios.html">   FUNCIONÁRIOS   </a> 
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/clientes.html">   CLIENTES </a> 
+              </li>
+            </nav>           
+        </div>  
+    </div>
     <!--fim do menu compartilhado -->
 
     <!--Controle de estoque-->
-    
-    <h3 align= "center">Estoque</h3>
-    <form action="#" align="center"> 
-        <div class="forms">
+ <div class= "estoque">   
+    <h3 >Estoque</h3>
+    <form action="#" > 
+        <div class="formularios">
             <label> Escolha um setor para buscas:</label> 
             <select name="select" placeholder="setores">
                 <option value="setorMassas" selected>Massas</option> 
@@ -35,8 +44,10 @@
             <button type="submit"> BUSCAR </button>          
         </div>
     </form>
-    <br>
+   
+ </div>
 
+ <div class="Tabelas">
     <table align="center">
         <tr>
             <th>FOTO</th>
@@ -81,6 +92,17 @@
             <th>9</th>        
         </tr>
     </table>
+ </div>
+
+    <div class="rodapé">
+        <ul>
+            <li>
+                <a>ÁREA DO CLIENTE</a>
+                <a>CONTATE-NOS</a>
+            </li>
+        </ul>
+
+    </div>
 
 </body>
 </html>

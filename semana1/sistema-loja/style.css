@@ -1,0 +1,107 @@
+html {
+    margin: 0;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cabecalho{
+    
+    display: inline-flexbox; 
+    background-color: black;
+    padding: 0px;  
+    margin:0px;
+
+}
+
+#nomeDaEmpresa{
+    display: inline-block;
+    background-color: black;
+    color: blanchedalmond;
+    margin-left: 30px;
+    
+    
+}
+ 
+p#nomeDaempresa{
+     color: blanchedalmond;
+ }
+
+.linksDoMenu{
+    display: inline-block;
+    background-color: black; 
+       
+}
+
+.linksDoMenu nav{
+    margin-left: 150px;
+}
+
+ 
+.linksDoMenu a{
+     text-decoration: none;
+     color: blanchedalmond;
+     display: inline-flex;
+     margin-left: 30px;
+     margin-right: 30px; 
+       
+}
+
+
+ #msgInicial{
+     display: block;
+     margin-top: 60px;   
+     text-align: center;
+     color: tomato;
+    
+ }
+ 
+ .rodapé{
+     position: absolute;
+     bottom:0;
+     width:100%;
+     height: 60px;
+     background-color: black;
+     text-align: right;
+     margin-right: 60px;
+     color: white;
+     text-decoration: none;
+     scroll-padding-top: 30px;
+     }
+
+     
+.rodapé li{
+    text-align: center;
+     margin: 10px;
+   
+    }
+ .rodapé a{
+     margin: 10px 20px 10px 20px;
+ }
+
+
+/*ESTOQUE*/
+
+.estoque h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formularios{
+    align-items: center;
+    text-align: center;
+}
+.tabelas{
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tabelas th{
+   margin: 5px 5px;
+   background-color: black;
+   color: black;
+}
+
+ 
