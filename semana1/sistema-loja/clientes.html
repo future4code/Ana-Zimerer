@@ -3,69 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Clientes Daju</title>
 </head>
 <body>
     <!--menu compartilhado-->
-    <center>
-        <div class="cabeçalho">
-           <font color="#FF0000"> <h1> RESTAURANTE DAJU </h1> </font> </font> 
-        </div> 
-        <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/index.html">  HOME   </a> 
-        <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/estoque.html">  ESTOQUE   </a> 
-        <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/addprodutos.html"> PRODUTOS   </a> 
-        <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/funcionarios.html">   FUNCIONÁRIOS   </a> 
-        <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/clientes.html">   CLIENTES </a>
+    <!--Div do cabeçalho: Nome da empresa e links do menu-->
+    <div class="cabecalho">        
+        <div id="nomeDaEmpresa"> 
+          <h3>   RESTAURANTE DAJU </h3>
+        </div>  
+       
+        
+        <div class="linksDoMenu">
+            <nav id="menuInicial">
 
-      </center>
+              <li>  
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/index.html">  HOME   </a>           
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/estoque.html">  ESTOQUE   </a> 
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/addprodutos.html"> PRODUTOS   </a> 
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/funcionarios.html">   FUNCIONÁRIOS   </a> 
+                <a href="file:///C:/Users/otavio/Downloads/Ana-Zimerer/semana1/sistema-loja/clientes.html">   CLIENTES </a> 
+              </li>
+            </nav>           
+        </div>  
+    </div>
     <!--fim do menu compartilhado -->
      
 
     <h3 align = "center">Cadastro de Clientes</h3>
-    <form action="#" align="center"> 
-        <div class="forms">
+
+    <form action="#" class="formularios"> 
+        
             <label> Nome: </label> 
             <input type="text" value="" placeholder="Digite o nome do cliente ">
-            <br><br>
+            <br>
             <label> Email: </label>
             <input type="email" value="" placeholder="Digite o email do cliente"> 
-            <br> <br>            
+            <br>             
             <label> Cel: </label>
-            <input type="tel" value="" placeholder="(XX) 9 XXXX-XXXX"> <br> <br>                  
-            <button type="submit" align="center"> CADASTRAR </button>          
-        </div>
+            <input type="tel" value="" placeholder="(XX) 9 XXXX-XXXX"> <br>                  
+            <button type="submit" class="botaoDeFormulario" align="center"> CADASTRAR </button>          
+        
 
         <div align="center">
             <h3> Consulta de Clientes</h3>
-            <p>
-            <table align="center">
+
+
+             <table align="center" class="tabela">
                 <tr>
-                     <th>NOME COMPLETO</th>
-                    <th>EMAIL</th> 
-                    <th>TELEFONE</th>                    
+                     <th>NOME COMPLETO</td>
+                    <th>EMAIL</td> 
+                    <th>TELEFONE</td>                    
                 </tr>
         
                 <tr>                    
-                    <th>Marilsa Mello</th>              
-                    <th>maa.mello@gmail.com</th> 
-                    <th>11 9 5354 9795</th>                
+                    <td>Marilsa Mello</td>              
+                    <td>maa.mello@gmail.com</td> 
+                    <td>11 9 5354 9795</td>                
                  </tr>
         
                 <tr>                    
-                    <th>Daniela Silveira</th>              
-                    <th>daniela_silveira@hotmail.com</th> 
-                    <th>11 9 6785 9987 </th>                 
+                    <td>Daniela Silveira</td>              
+                    <td>daniela_silveira@hotmail.com</td> 
+                    <td>11 9 6785 9987 </td>                 
                 </tr>
 
                 <tr>                    
-                    <th>Luiza Maria</th>              
-                    <th> lumaria_santos02@ig.com</th> 
-                    <th>11 9 9598 6675</th>                 
+                    <td>Luiza Maria</th>              
+                    <td> lumaria_santos02@ig.com</td> 
+                    <td>11 9 9598 6675</td>                 
                 </tr>
             </table>
         </p>
         </div>
     </form>
+
+    <div class="rodapé">
+        <ul>
+            <li>
+                <a>ÁREA DO CLIENTE</a>
+                <a>CONTATE-NOS</a>
+            </li>
+        </ul>
+
+    </div>
 
     
 </body>
