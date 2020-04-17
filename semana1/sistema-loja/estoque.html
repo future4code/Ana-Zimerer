@@ -35,20 +35,20 @@
     <h3 >Estoque</h3>
     <form action="#" > 
         <div class="formularios">
-            <label> Escolha um setor para buscas:</label> 
+            <label> Escolha um setor:</label> 
             <select name="select" placeholder="setores">
                 <option value="setorMassas" selected>Massas</option> 
                 <option value="setorTortas">Tortas</option>
                 <option value="setorCarnes">Carnes</option>
             </select> 
-            <button type="submit"> BUSCAR </button>          
+            <button type="submit" class="botaoDeFormulario"> BUSCAR </button>          
         </div>
-    </form>
-   
- </div>
+    </form> 
+</div>
 
- <div class="Tabelas">
-    <table align="center">
+ 
+    <table class="tabela" align="center">
+        
         <tr>
             <th>FOTO</th>
             <th>SETOR</th>
@@ -58,41 +58,42 @@
         </tr>
 
         <tr>
-            <th> <img src="torta.jpg" width="100px 80px"> </th>
-            <th>Tortas</th>              
-            <th>Tortas de frango</th>
-            <th>R$ 24,00 </th>
-            <th>13</th>   
+            <td> <img src="torta.jpg" width="100px 80px"> </td>
+            <td>Tortas</td>              
+            <td>Tortas de frango</td>
+            <td>R$ 24,00 </td>
+            <td>13</td>         
+        </tr>
+
+        <tr class="linhasTabela">
+            <td> <img src="parmegiana.jpg" width="100px 80px"> </td>
+            <td>Carnes</td>              
+            <td>Filé a parmegiana</td>
+            <td>R$ 36,00 </td>
+            <td>6</td>   
         
         </tr>
 
-        <tr>
-            <th> <img src="parmegiana.jpg" width="100px 80px"> </th>
-            <th>Carnes</th>              
-            <th>Filé a parmegiana</th>
-            <th>R$ 36,00 </th>
-            <th>6</th>   
+        <tr class="linhasTabela">
+            <td> <img src="rondelli.jpg" width="100px 80px"></td>
+            <td>Massas</td>              
+            <td>Rondelli 2 queijos</td>
+            <td>R$ 48,00 </td>
+            <td>4</td>
         
         </tr>
 
-        <tr>
-            <th> <img src="rondelli.jpg" width="100px 80px"></th>
-            <th>Massas</th>              
-            <th>Rondelli 2 queijos</th>
-            <th>R$ 48,00 </th>
-            <th>4</th>   
-        
-        </tr>
-
-        <tr>
-            <th> <img src="lasanha.jpg" width="100px 80px"> </th>
-            <th>Massas</th>              
-            <th>Lasanha 3 queijos</th>
-            <th>R$ 48,00 </th>
-            <th>9</th>        
+        <tr class="linhasTabela">
+            <td> <img src="lasanha.jpg" width="100px 80px"> </td>
+            <td>Massas</th>              
+            <td>Lasanha 3 queijos</td>
+            <td>R$ 48,00 </td>
+            <td>9</td>       
         </tr>
     </table>
- </div>
+    <br>
+    <br>
+    <br>
 
     <div class="rodapé">
         <ul>
