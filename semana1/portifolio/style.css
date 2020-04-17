@@ -95,18 +95,14 @@ body{
     width: 40vw;
     height: 50vh;
     font-size: 18px
-    border-radius: 10px;
-    margin-left: 30px;
+   
 }
 #caixaDeApresentação p{
     font-size: 3em;
-    color: rgb(66, 70, 78);
-    
-    
+    color: rgb(66, 70, 78);      
 }
 
-#caixaDeApresentação ul{
-    
+#caixaDeApresentação ul{   
     
     width: 40vw;
     padding: 0;
