@@ -8,22 +8,23 @@ body{
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
-    background-color: #E6E6E6;
+    background-color: rgb(230, 216, 229);
 }
 
 .cabeçalho{
-    margin-top: 0px;
-    padding-top: 0px;
-    background-color: transparent;
+    
+    
 }
 
  #meuNome{
      display: inline-block;
      text-align: center;
+     align-items: center;
      font-size: 1.4em;
-     padding: 10px;
-     margin-left: 10px;
-     width: 50vh;
+     padding: 10px;     
+     width: 98vw;
+     background-color:  #FE642E;
+     opacity: 0.7;
     
      
 
@@ -43,13 +44,15 @@ body{
      font-size:1em;
  }
  #menu{
-    display: inline-block;
+    display: block;
     
     font-size: 1.5em;
+    width: auto;
+    
  }
 
  #menu ul{
-     width: 72vW;
+     width: 96vW;
      max-height: 10vw;
      text-align: center;    
 
@@ -62,75 +65,107 @@ body{
      margin: 0px 40px;
 
 }
+#menu ul li a:hover{
+    margin: 0px 40px;
+    color: #fE2E64;
+
+}
 
 .home{
     display: inline-block;
     margin-top: 20px;    
     width: 99vw;
     height: 70vh;
+    
 }
 .home div{   
     display: inline-block;
-    zoom: 1;       
-    
+    zoom: 1;  
     position: absolute;    
 }
 
 .home img{   
-    width: 20vw;
-    height: 40vh;
+    width: 25vw;
+    height: 45vh;
     display: block;   
     display: inline-block;      
     border-radius: 50%;
-    margin: 30px 10px 30px 400px;
+    margin: 25px 10px 30px 230px;
     border-color: black;
     border-style: 3px solid;  
 
 }
-#caixaDeApresentação{
-    display: inline-block; 
-    
-    margin: 30px 20px;
+.caixaDeApresentação{
+    display: inline-block;     
+    margin: 10px 10px;
     padding: 5px;
     width: 40vw;
     height: 50vh;
     font-size: 18px
    
 }
-#caixaDeApresentação p{
+.caixaDeApresentação h4{
     font-size: 3em;
-    color: rgb(66, 70, 78);      
+    color: rgb(66, 70, 78);
+    margin: 5px;      
 }
 
-#caixaDeApresentação ul{   
-    
+.caixaDeApresentação ul{     
     width: 40vw;
     padding: 0;
     align-items: center;  
     margin-top: 100px;
    
 }
-#caixaDeApresentação ul li{
+.caixaDeApresentação ul li{
     display: inline-block;
     align-items: center;
          
 }
 
-#caixaDeApresentação ul li a{
+.caixaDeApresentação a{
     align-items: center;
     margin: 10px;
     margin-left: 20px;
-    padding: 2px;
-}
+    padding: }
 
-#caixaDeApresentação button{
+
+
+.caixaDeApresentação button{
     color: white;
-    background-color: teal;
     border: none;
     border-radius: 50%;
-    padding: 0px 1px;
-   
-    height: 15vh;
+    font-size: 0.8em;  
+    font-weight: bold;  
+    background-position: -15px -15px;
+    height: 125px;
+    width: 125px;
+    
+}
+
+    .botaoProjetos{
+    background-color: teal;
+}
+
+    .botaoProjetos:hover{
+    background-color:  rgb(6, 107, 107);
+}
+
+    .botaoCurriculo {
+    background-color: #FE642E;
+    
+}
+    .botaoCurriculo:hover{
+    background-color: rgb(212, 70, 18);
+}
+
+    .botaoSkills{
+    background-color: #fE2E64;
+    }
+
+    .botaoSkills:hover{
+        background-color: rgb(204, 35, 80);
+    
 }
 
 
@@ -138,10 +173,15 @@ body{
     background-color: black;
     color:white;
     height: 15vh;
+    width: 100vW;
+    font-size: 1.3em;
         
     }
  .rodapé ul{
      display: inline-block;
+     text-align:center;
+     width: 96vW;
+     
  }
     
 .rodapé li{
@@ -155,5 +195,9 @@ body{
 .rodapé a{
     margin: 10px 20px
     
+}
+
+.rodapé a:hover{
+    color:rgb(226, 196, 196)
 }
 
