@@ -137,6 +137,13 @@ td button:active {
     height: 100px;
     
 }
+
+.container-do-search input{
+    border-style: none;
+    border-bottom: black;
+    border-width: 4px;
+    
+}
 .icone{
     width: 20px;
     height: 20px;   
