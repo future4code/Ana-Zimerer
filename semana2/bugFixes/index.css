@@ -81,8 +81,12 @@ div img {
 }
 
 
-#container-de-descricao>ol {
+#container-de-descricao>ol{
     padding: 15px 0px;
+    display: block;
+    width: 17vw;
+    margin: auto;
+    background-color: blueviolet;
     
 }
 
