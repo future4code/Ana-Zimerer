@@ -80,8 +80,18 @@ div img {
 
 }
 
-.icone {
-    height: 15px;
+.icone{
+    height: 25px;
+    
+}
+
+img:hover{
+    opacity: 0.2;
+    
+}
+
+img:active{
+    opacity: 1;
 }
 
 
