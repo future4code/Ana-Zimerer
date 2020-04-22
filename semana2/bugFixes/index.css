@@ -7,7 +7,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;     	
+    font-family: 'Roboto', sans-serif; 
+    box-shadow: none ;    	
 }
 
 h2 {
@@ -20,6 +21,22 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border: 0px solid;
+}
+
+#itens-container-search input:focus{   
+    outline: none; 
+    box-shadow: 0 0 0 0;
+    box-shadow: white;
+   
+   
+
+}
+
+input :active{
+    border: none;
+    outline: none;
+
 }
 
 button:focus {
@@ -77,7 +94,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-    padding: 60px;
+    padding: 30px;
 }
 
 
@@ -86,7 +103,7 @@ div img {
     display: block;
     width: 17vw;
     margin: auto;
-    background-color: blueviolet;
+    
     
 }
 
@@ -172,4 +189,14 @@ td button:active {
 }
 #back-button:active {
     color: white;
+}
+
+ * button:focus{
+    outline: none;
+    box-shadow: none;
+}
+div input :focus{
+    box-shadow: none;
+    outline: none;
+
 }
