@@ -1,0 +1,293 @@
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    background-color: rgb(228, 227, 236);
+    align-items: center;
+}
+
+.cabecalho{
+    margin: 2px;
+}
+
+ #meuNome{
+     display: inline-block;
+     text-align: center;
+     align-items: center;
+     font-size: 1.6em;
+     padding: 6px;     
+     width: 98vw;       
+     border-radius: 6px;    
+     background-image: linear-gradient(to bottom, #9890e3 0%, #b1f4cf 100%);
+    
+
+ }
+
+ #meuNome h3{
+     
+     margin-bottom: 0.1px;
+     font-size: 2em;    ;
+     
+    
+ }
+
+ #meuNome p{
+     font-style: oblique;
+     font-size:1em;
+ }
+ #menu{
+    display: block;    
+    font-size: 1.5em;
+    padding: 2px;
+   
+    height: 7vh;
+    width: auto;
+    filter: alpha;
+   
+   
+    
+ }
+
+ #menu ul{
+     width: 95vW;
+     max-height: 10vw;
+     text-align: center;
+     
+     margin: 6px;
+       
+
+ }
+
+ #menu ul li{
+     display: inline-block;
+     
+ }
+ #menu ul li a{
+     margin: 0px 40px;
+     text-decoration: none;
+     color: black;
+
+}
+#menu ul li a:hover{
+    margin: 0px 40px;
+    color: rgb(221, 107, 138);
+    
+
+}
+
+.home{
+    display: inline-block;
+    margin-top: 20px;    
+    width: 99vw;
+    height: 70vh;
+    
+}
+.home div{   
+    display: inline-block;
+    zoom: 1;  
+    position: absolute;    
+}
+
+.home img{   
+    width: 25vw;
+    height: 45vh;
+    display: block;   
+    display: inline-block;      
+    border-radius: 50%;
+    margin: 25px 10px 30px 230px;
+    border-color: black;
+    border-style: 3px solid;  
+
+}
+.caixaDeApresentação{
+    display: inline-block;     
+    margin: 10px 10px;
+    padding: 5px;
+    width: 99vw;
+    height: 50vh;
+    font-size: 1.1em;
+    
+   
+}
+.caixaDeApresentação h4{
+    font-size: 3em;
+    color: rgb(66, 70, 78);
+    margin: 5px;      
+}
+
+.caixaDeApresentação ul{     
+    width: 40vw;
+    padding: 0;
+    align-items: center;  
+    margin-top: 100px;
+   
+}
+.caixaDeApresentação ul li{
+    display: inline-block;
+    align-items: center;
+         
+}
+
+.caixaDeApresentação a{
+    align-items: center;
+    margin: 10px;
+    margin-left: 20px;
+     }
+
+
+
+.caixaDeApresentação button{
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 0.8em;  
+    font-weight: bold;  
+    background-position: -15px -15px;
+    height: 20vh;
+    width: 10vw;
+    
+}
+
+    .botaoProjetos{
+    background-color:  rgb(74, 74, 209);
+    
+}
+
+    .botaoProjetos:hover{
+    background-color:  rgb(49, 49, 240) ;
+}
+
+    .botaoCurriculo {
+    background-color: #3ae992;
+    
+    
+}
+    .botaoCurriculo:hover{
+    background-color: #32c97d;
+}
+
+    .botaoSkills{
+    background-color: #fE2E64;
+    }
+
+    .botaoSkills:hover{
+        background-color: rgb(240, 80, 122);
+    
+}
+
+
+.rodapé{
+    background-color: black;
+    color:white;
+    height: 15vh;
+    width: 100vW;
+    font-size: 1.3em;
+        
+    }
+ .rodapé ul{
+     display: inline-block;
+     text-align:center;
+     width: 96vW;
+     
+ }
+    
+.rodapé li{
+   text-decoration: none; 
+   display: inline-block;
+    
+  
+   }
+
+
+.rodapé a{
+    margin: 10px 20px
+    
+}
+
+.rodapé a:hover{
+    color:rgb(226, 196, 196)
+}
+
+
+/*curriculo h3*/
+
+.curriculo{
+    align-items: center;
+    text-align: center;
+}
+.curriculo h3{
+    margin: 20px;
+    font-size: 1.7em;
+    color: rgb(77, 72, 72);
+}
+
+.tabelas{
+    align-items: center;
+}
+.tabelas{
+    align-items: center;
+    width: 50vw;
+    height: 20vh;
+}
+
+.tabelas td{
+    padding: 5px 40px;
+    text-align: left;
+    font-size: 1.05em;
+    font-style: oblique;
+}
+.tabelas tr th{
+    padding: 4px 40px;
+    text-align: left;
+    font-size: 1.3em;
+ 
+
+}
+
+#legendaTabela th{
+    text-align: right;
+    align-items: right;
+    color: rgb(68, 15, 167);
+    font-size: 1.05em;
+}
+
+
+.formularioGeral{
+    bo
+    padding: 10px;
+    height: auto;
+    width: auto;
+    margin: 10px;
+}
+
+.formularioGeral input{
+    background-color: rgb(228, 227, 236);
+    color: black;
+    border: none;
+    border-bottom: black;
+    margin: 6px;
+}
+
+.botaoSistema{
+    background-image: url(foto.jpg);
+    
+}
+
+    .botaoSistema:hover{
+   
+    background-color:  rgb(49, 49, 240) ;
+    opacity: 0.5;
+}
+
+    .botaoFuture4 {
+    background-image: url(foto.jpg);
+      
+    
+}
+    .botaoFuture4:hover{        
+        background-color:   #fE2E64;
+        opacity:0.5;
+    }
