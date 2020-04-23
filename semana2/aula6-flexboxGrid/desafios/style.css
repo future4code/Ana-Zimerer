@@ -1,0 +1,21 @@
+.container-do-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+/*CAIXA DE HASHTAGS*/
+.container-hashtags{
+    display: flexbox;
+    flex-direction: column;
+    width: 20vw;
+    height: 60vh;
+    border: 1px solid black;
+
+
+}
+
+#ha
