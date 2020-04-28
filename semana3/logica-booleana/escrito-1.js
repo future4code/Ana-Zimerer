@@ -16,9 +16,9 @@ kelvin = celsius + 273.15
 console.log ("O valor de " +celsius+ "°C em Fahrennheit é de "+fahrenheit+"°F e em Kelvin é de " +kelvin+ "°K")
 
 //USUÁRIO DIGITANDO O VALOR DE °C
-celsius2 = parseInt(prompt ("Digite o valor em Celsius para conversão"))
+celsius2 = prompt ("Digite o valor em Celsius para conversão")
 fahrenheit= (celsius2)*9/5 + 32
-kelvin = celsius2 + 273.15
+kelvin = Number(celsius2) + 273.15
 console.log("O valor de " +celsius2+ "°C em Fahrennheit é de "+fahrenheit+"°F e em Kelvin é de " +kelvin+ "°K")
 
 
