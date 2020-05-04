@@ -10,7 +10,7 @@
  * 
  * 
  */
- let baralhoUsuario=[]
+ /*let baralhoUsuario=[]
  let baralhoComputador=[]
  let pontuacaoUsuario=0
  let pontuacaoComputador=0
@@ -18,11 +18,10 @@
  const cartaComputador=""
 
  alert("Bem vindo ao jogo BlackJack")
-   if (confirm("Quer iniciar nova rodada?")){ 
-     
+   if (confirm("Quer iniciar nova rodada?")){      
          for (let i=0; i<2; i++) {  
             const cartaUsuario=comprarCarta()
-            const cartaComputador=comprarCarta()            
+            const cartaComputador=comprarCarta() 
             pontuacaoUsuario+=cartaUsuario.valor
             pontuacaoComputador+=cartaComputador.valor     
             baralhoUsuario.push(cartaUsuario.texto) 
@@ -30,12 +29,11 @@
          }
          console.log("Usuário - cartas: "+baralhoUsuario+ " - Pontuação: "+pontuacaoUsuario) 
          console.log("Computador - cartas: "+baralhoComputador+ " - Pontuação: "+pontuacaoComputador)  
-         
    }else{
       alert("O jogo acabou")
    }
 
-
+   
    if ((pontuacaoUsuario === 21)||(pontuacaoUsuario>pontuacaoComputador && pontuacaoUsuario<21)){
       console.log("O usuário ganhou!")
    }else if (pontuacaoUsuario===pontuacaoComputador){
@@ -45,4 +43,4 @@
       console.log("O computador ganhou!")   
    }
 
-   
+*/
