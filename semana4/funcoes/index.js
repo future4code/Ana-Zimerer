@@ -30,5 +30,27 @@ anosHumanos= Number (anosHumanos)
 console.log("Sua idade de cachorro é: " + calculoIdadeDeCachorro(anosHumanos));
 */
 
-valor=1120/10
-alert(valor)
+//EXERCÍCIO 05
+anoInformadoPeloUsuario=prompt("Digite um ano entre 1000d.c. e 2000d.c.")
+let seculo=anoInformadoPeloUsuario/100
+
+function converteEmSeculo(seculo){    
+    seculoSemDecimal=Math.trunc(seculo)
+    return(seculoSemDecimal)
+}
+
+const numerosRomanos=["null", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX","X","XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XI"]
+if ((anoInformadoPeloUsuario>=1000) && (anoInformadoPeloUsuario<=2000)){
+    alert(converteEmSeculo(seculo));  
+    seculo=anoInformadoPeloUsuario/100
+    if(seculo%1===0){        
+        let emNumeroRomano= numerosRomanos[seculoSemDecimal]
+        console.log("O ano "+anoInformadoPeloUsuario+ " pertence ao século "+emNumeroRomano)
+    }else{
+        let emNumeroRomano= numerosRomanos[seculoSemDecimal+1]
+        console.log("O ano "+anoInformadoPeloUsuario+ " pertence ao século "+emNumeroRomano)
+    }
+}else{
+   alert("Digite um valor válido")
+}
+
