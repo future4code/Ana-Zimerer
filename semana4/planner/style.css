@@ -1,0 +1,41 @@
+ header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: chartreuse;
+    padding: 10px;
+}
+.tarefaRiscada{
+    text-decoration: line-through;
+}
+.container-nova-tarefa{
+    width: 100%;
+    
+}
+#inputNovaTarefa{
+    width: 70%;
+    margin: 2px;
+}
+#select{
+    width: 40%;
+}
+#botaoNovaTarefa{
+    width: 30%;
+}
+
+
+.container-dias-da-semana{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 80vh;
+}
+
+.container-dias-da-semana div{
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+}
+ 
