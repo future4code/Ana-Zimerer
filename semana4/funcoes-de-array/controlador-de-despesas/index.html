@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Funções de array</title>
+</head>
+<body>
+    <div class="div-principal">
+    <section class="section-cadastrar">
+        <form class="formulario-cadastrar" onsubmit="return false">
+            <input id="inputValorCadastrar" type="number" placeholder="Valor do gasto">
+            <select id="selectTipoDeDespesa">
+                <option id="option-casa" selected>Casa</option>
+                <option id="option-comida">Comida</option>
+                <option id="option-roupas">Roupas</option>
+            </select>
+            <input id="inputDescricaoCadastrar" type="text" placeholder="Escreva a descrição do gasto"> 
+            <button id="button-cadastrar" onclick="limpaFormulario()">CADASTRAR</button>       
+        </form>
+    </section>
+
+    <section class="section-lista-de-despesas">
+        <select id="select-tipo-de-despesa">
+            <option id="option-casa">Casa</option>
+            <option id="option-comida">Comida</option>
+            <option id="option-roupas">Roupas</option>
+        </select>
+        <input id="input-valor-minimo" type="number" placeholder="Valor mínimo">
+        <input id="input-valor-maximo" type="number" placeholder="Valor máximo">
+        <button id="button-filtrar">FILTRAR</button>  
+        <button id="button-limpar-filtros">LIMPAR FILTROS</button>  
+    </section>
+
+    <section class="section-extrato">
+        <label>EXTRATO:</label>
+        <label>VALOR TOTAL:</label>
+    </section>
+</main>
+</body>
+</html>

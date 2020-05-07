@@ -1,0 +1,33 @@
+.div-principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+}
+.formulario-cadastrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px;
+    border: 2px solid black;
+    height: 40vh;
+    width: 20vw;
+}
+.section-lista-de-despesas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px;
+    border: 2px solid black;
+    height: 40vh;
+    width: 20vw;
+}
+
+.section-extrato{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px;
+    border: 2px solid black;
+    height: 40vh;
+    width: 20vw;
+}
