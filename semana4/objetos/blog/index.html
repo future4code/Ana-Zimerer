@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
+    <title>Blog</title>
+</head>
+<body>
+    <!--container do fomulario pra adicionar novos posts ao blog-->
+    <div class="container-do-formulario">
+        <form id="fomulario-de-posts">
+            <label></label>
+            <label>Título</label><input id="titulo-do-post" type="text" value="">
+            <label>Texto</label><textarea id="texto-do-post" type="text" value=""></textarea>
+            <label></label>
+            <label>Hora:</label> <input id="horario-do-post" type="time">
+            <labe>Data:</labe> <input id="data-do-post" type="date">
+            <button id="botao-adicionar-post" onclick="guardaInformacoesDoPost()">ADD</button>
+        </form>
+    </div>
+
+    <!--container do feed de posts do blog-->
+    <div class="container-feed-do-blog">
+        <ul id="lista-de-posts">
+
+        </ul>        
+    </div>
