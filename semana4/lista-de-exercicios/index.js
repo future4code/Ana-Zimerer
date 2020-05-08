@@ -46,25 +46,48 @@
 //}
 //console.log("Usando for: " +arrayFor)
 
-///////////"Exercicio de lógica- 2"
 // 2) 
-//a)false
-//b)false
-//c)true
-//d)true
-//e)true
+//a-false
+//b-false
+//c-true
+//d-true
+//e-true
 
-// 3)
-const quantidadeDeNumerosPares =9
-let i = 0
-let n= 0 
-array=[]
-while(array.length<quantidadeDeNumerosPares){   
-    if (i%2===0){        
-        array.push(i)
+// 3) Não funciona, a condição do while está errada, a impressão está errada ao multiplicar por dois e ele não possui incremento
+//const quantidadeDeNumerosPares =10
+//let i = 0
+//array=[]
+//while(array.length<quantidadeDeNumerosPares){   
+//    if (i%2===0){        
+//        array.push(i)
+//    }
+//    i++    
+// }
+//console.log(array)
+
+//4) 
+a=prompt("Digite o valor do lado A:")
+a= Number(a)
+b=prompt("Digite o valor do lado B:")
+b= Number(b)
+c=prompt("Digite o valor do lado C:")
+c= Number(c)
+
+const tipoDeTriangulo= (a,b,c) =>{
+    if ((a === b) && (b === c) && (c===a)){
+        return ("Equilatero")
+    }else if((a===b || a ===c) && (b===c || b===a)) {
+            return ("Isosceles")    
+    }else{
+         return ("Escaleno")  
     }
-    i++    
- }
-console.log(array)
+}
 
-    
+let resposta = tipoDeTriangulo(a,b,c)
+alert(resposta)
+
+
+
+
+
+///////////"Exercicio de lógica- 2"
