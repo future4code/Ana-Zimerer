@@ -46,12 +46,14 @@
 //}
 //console.log("Usando for: " +arrayFor)
 
+
 // 2) 
 //a-false
 //b-false
 //c-true
 //d-true
 //e-true
+
 
 // 3) Não funciona, a condição do while está errada, a impressão está errada ao multiplicar por dois e ele não possui incremento
 //const quantidadeDeNumerosPares =10
@@ -65,29 +67,58 @@
 // }
 //console.log(array)
 
-//4) 
-a=prompt("Digite o valor do lado A:")
-a= Number(a)
-b=prompt("Digite o valor do lado B:")
-b= Number(b)
-c=prompt("Digite o valor do lado C:")
-c= Number(c)
 
-const tipoDeTriangulo= (a,b,c) =>{
-    if ((a === b) && (b === c) && (c===a)){
-        return ("Equilatero")
-    }else if((a===b || a ===c) && (b===c || b===a)) {
-            return ("Isosceles")    
+//4) 
+//a=prompt("Digite o valor do lado A:")
+//a= Number(a)
+//b=prompt("Digite o valor do lado B:")
+//b= Number(b)
+//c=prompt("Digite o valor do lado C:")
+//c= Number(c)
+//
+//const tipoDeTriangulo= (a,b,c) =>{
+//    if ((a === b) && (b === c) && (c===a)){
+//        return ("Equilatero")
+//    }else if((a===b || a ===c) && (b===c || b===a)) {
+//            return ("Isosceles")    
+//    }else{
+//         return ("Escaleno")  
+//    }
+//}
+//
+//let resposta = tipoDeTriangulo(a,b,c)
+//alert("Seu triangulo é: "+ resposta)
+
+
+//5)
+
+primeiroNumero=prompt("Digite o primeiro valor")
+primeiroNumero= Number(primeiroNumero)
+segundoNumero=prompt("Digite o segundo valor:")
+segundoNumero= Number(segundoNumero)
+
+///////função pra mostrar numero maior
+const calculaMaior =(primeiroNumero,segundoNumero)=>{
+    if (primeiroNumero>segundoNumero){
+        return (primeiroNumero)
+    }else if(segundoNumero>primeiroNumero){
+        return (segundoNumero)
     }else{
-         return ("Escaleno")  
+        return ("nenhum")
     }
 }
 
-let resposta = tipoDeTriangulo(a,b,c)
-alert(resposta)
+let numeroMaior=calculaMaior(primeiroNumero,segundoNumero)
+console.log("O número maior é "+numeroMaior)
 
+///////função pra mostrar se numero é divisivel
+const calculaSeSaoDivisiveis =(primeiroNumero,segundoNumero)=>{
+    if (primeiroNumero%segundoNumero===0){
+        return (primeiroNumero+ " é divisivel por " +segundoNumero+ "/n")
+    }else if (segundoNumero%primeiroNumero===0){
+        return (segundoNumero+ " é divisivel por " +primeiroNumero)
+    }else{
+        return ("Não são dividiveis")
+    }
+}
 
-
-
-
-///////////"Exercicio de lógica- 2"
