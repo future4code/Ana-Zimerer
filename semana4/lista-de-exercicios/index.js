@@ -25,24 +25,46 @@
 ////EXERCICIOS DE LÓGICA DE PROGRAMAÇÃO////
 
 // 1) Podemos usar for of, for ou while. 
+//
+//const arrayDeNumeros=[20,30,4,50,6,92,33,7,15,62]
+//let arrayForOf=[]
+//let arrayFor=[]
+//let arrayWhile=[]
+//
+////for of para criar um novo array mostrando apenas os divisiveir por 5
+//for (let numero of arrayDeNumeros){    
+//    if (numero%5===0){
+//        arrayForOf.push(numero)
+//    }
+//    
+//}
+//console.log("Usando for of: " +arrayForOf)
+//
+////for para copiar a array de original em outra array
+//for (i=0; i<=arrayDeNumeros.length; i++){
+//    arrayFor.push(arrayDeNumeros[i])
+//}
+//console.log("Usando for: " +arrayFor)
 
-const arrayDeNumeros=[20,30,4,50,6,92,33,7,15,62]
-let arrayForOf=[]
-let arrayFor=[]
-let arrayWhile=[]
+///////////"Exercicio de lógica- 2"
+// 2) 
+//a)false
+//b)false
+//c)true
+//d)true
+//e)true
 
-//for of para criar um novo array mostrando apenas os divisiveir por 5
-for (let numero of arrayDeNumeros){    
-    if (numero%5===0){
-        arrayForOf.push(numero)
+// 3)
+const quantidadeDeNumerosPares =9
+let i = 0
+let n= 0 
+array=[]
+while(array.length<quantidadeDeNumerosPares){   
+    if (i%2===0){        
+        array.push(i)
     }
+    i++    
+ }
+console.log(array)
+
     
-}
-console.log("Usando for of: " +arrayForOf)
-
-//for para copiar a array de original em outra array
-for (i=0; i<=arrayDeNumeros.length; i++){
-    arrayFor.push(arrayDeNumeros[i])
-}
-
-console.log("Usando for: " +arrayFor)
