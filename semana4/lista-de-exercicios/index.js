@@ -166,14 +166,25 @@
 // do mesmo tipo
 
 //2)
-lado1=prompt("Digite o valor do lado 1")
-lado1=Number(lado1)
-lado2=prompt("Digite o valor do lado 2")
-lado2=Number(lado2)
+//lado1=prompt("Digite o valor do lado 1")
+//lado1=Number(lado1)
+//lado2=prompt("Digite o valor do lado 2")
+//lado2=Number(lado2)
+//
+//const criaRetangulo = (lado1, lado2) =>{
+//    let perimetro= 2* (lado1+lado2)
+//    let area= lado2*lado1
+//    return ("Largura: "+lado1+ " Altura: "+lado2+ " Perimetro: "+perimetro+ " Área: "+area)
+//}
+//console.log(criaRetangulo(lado1,lado2))
 
-const criaRetangulo = (lado1, lado2) =>{
-    let perimetro= 2* (lado1+lado2)
-    let area= lado2*lado1
-    return ("Largura: "+lado1+ " Altura: "+lado2+ " Perimetro: "+perimetro+ " Área: "+area)
+//3)
+const filme = {
+    titulo: 'Harry Potter e o prisioneiro de Azkaban',
+    ano: '2003',
+    diretor: 'Alfonso Cuarón',
+    elenco: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint']
 }
-console.log(criaRetangulo(lado1,lado2))
+
+console.log("Venha assistir ao filme "+filme.titulo+ ", de "+filme.ano + ", dirigido por "+filme.diretor +" e estrelado por " + filme.elenco[0]+ ", "+ filme.elenco[1] + " e "+ filme.elenco[2])
+//Venha assistir ao filme NOME DO FILME, de ANO, dirigido por DIRETOR e estrelado por ATOR 1, ATRIZ 2,
