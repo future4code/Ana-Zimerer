@@ -114,11 +114,21 @@ console.log("O número maior é "+numeroMaior)
 ///////função pra mostrar se numero é divisivel
 const calculaSeSaoDivisiveis =(primeiroNumero,segundoNumero)=>{
     if (primeiroNumero%segundoNumero===0){
-        return (primeiroNumero+ " é divisivel por " +segundoNumero+ "/n")
+        return (primeiroNumero+ " é divisivel por " +segundoNumero)
     }else if (segundoNumero%primeiroNumero===0){
         return (segundoNumero+ " é divisivel por " +primeiroNumero)
     }else{
-        return ("Não são dividiveis")
+        return ("Não são divisíveis")
     }
 }
 
+let numeroDivisivel=calculaSeSaoDivisiveis(primeiroNumero,segundoNumero)
+console.log(numeroDivisivel)
+
+///////// função pra mostrar a diferença entre os numeros 
+const diferenciaNumeros=(primeiroNumero,segundoNumero)=>{
+    return (primeiroNumero-segundoNumero)
+}
+
+let diferencaDeNumeros=diferenciaNumeros(primeiroNumero,segundoNumero)
+console.log("Diferença entre numeros: "+diferencaDeNumeros)
