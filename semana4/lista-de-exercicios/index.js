@@ -91,44 +91,70 @@
 
 
 //5)
+//
+//primeiroNumero=prompt("Digite o primeiro valor")
+//primeiroNumero= Number(primeiroNumero)
+//segundoNumero=prompt("Digite o segundo valor:")
+//segundoNumero= Number(segundoNumero)
+//
+/////////função pra mostrar numero maior
+//const calculaMaior =(primeiroNumero,segundoNumero)=>{
+//    if (primeiroNumero>segundoNumero){
+//        return (primeiroNumero)
+//    }else if(segundoNumero>primeiroNumero){
+//        return (segundoNumero)
+//    }else{
+//        return ("nenhum")
+//    }
+//}
+//
+//let numeroMaior=calculaMaior(primeiroNumero,segundoNumero)
+//console.log("O número maior é "+numeroMaior)
+//
+/////////função pra mostrar se numero é divisivel
+//const calculaSeSaoDivisiveis =(primeiroNumero,segundoNumero)=>{
+//    if (primeiroNumero%segundoNumero===0){
+//        return (primeiroNumero+ " é divisivel por " +segundoNumero)
+//    }else if (segundoNumero%primeiroNumero===0){
+//        return (segundoNumero+ " é divisivel por " +primeiroNumero)
+//    }else{
+//        return ("Não são divisíveis")
+//    }
+//}
+//
+//let numeroDivisivel=calculaSeSaoDivisiveis(primeiroNumero,segundoNumero)
+//console.log(numeroDivisivel)
+//
+/////////// função pra mostrar a diferença entre os numeros 
+//const diferenciaNumeros=(primeiroNumero,segundoNumero)=>{
+//    return (primeiroNumero-segundoNumero)
+//}
+//
+//let diferencaDeNumeros=diferenciaNumeros(primeiroNumero,segundoNumero)
+//console.log("Diferença entre numeros: "+diferencaDeNumeros)
 
-primeiroNumero=prompt("Digite o primeiro valor")
-primeiroNumero= Number(primeiroNumero)
-segundoNumero=prompt("Digite o segundo valor:")
-segundoNumero= Number(segundoNumero)
+////EXERCICIOS DE FUNÇÕES////
 
-///////função pra mostrar numero maior
-const calculaMaior =(primeiroNumero,segundoNumero)=>{
-    if (primeiroNumero>segundoNumero){
-        return (primeiroNumero)
-    }else if(segundoNumero>primeiroNumero){
-        return (segundoNumero)
-    }else{
-        return ("nenhum")
-    }
+//1) 
+////Dá erro quando o  esse exercicio. 
+//const array =[54,22,45,2,4,8]
+//const retornaSegundoMaior = (array)=>{
+//    let segundoMaior=0
+//    let numeroMaior=0
+//    for(let elemento of array){
+//        if (elemento > numeroMaior){          
+//            numeroMaior=elemento            
+//        }else if (elemento > segundoMaior){
+//             segundoMaior=elemento          
+//        }     
+//    }
+//    return console.log("O segundo maior elemento é: "+segundoMaior)
+//}
+//retornaSegundoMaiorESegundoMenor(array)
+
+//2)
+
+const mostraMensagem=()=>{
+    alert("Hello Labenu")
 }
-
-let numeroMaior=calculaMaior(primeiroNumero,segundoNumero)
-console.log("O número maior é "+numeroMaior)
-
-///////função pra mostrar se numero é divisivel
-const calculaSeSaoDivisiveis =(primeiroNumero,segundoNumero)=>{
-    if (primeiroNumero%segundoNumero===0){
-        return (primeiroNumero+ " é divisivel por " +segundoNumero)
-    }else if (segundoNumero%primeiroNumero===0){
-        return (segundoNumero+ " é divisivel por " +primeiroNumero)
-    }else{
-        return ("Não são divisíveis")
-    }
-}
-
-let numeroDivisivel=calculaSeSaoDivisiveis(primeiroNumero,segundoNumero)
-console.log(numeroDivisivel)
-
-///////// função pra mostrar a diferença entre os numeros 
-const diferenciaNumeros=(primeiroNumero,segundoNumero)=>{
-    return (primeiroNumero-segundoNumero)
-}
-
-let diferencaDeNumeros=diferenciaNumeros(primeiroNumero,segundoNumero)
-console.log("Diferença entre numeros: "+diferencaDeNumeros)
+mostraMensagem()
