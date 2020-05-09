@@ -153,8 +153,27 @@
 //retornaSegundoMaiorESegundoMenor(array)
 
 //2)
+//const mostraMensagem=()=>{
+//    alert("Hello Labenu")
+//}
+//mostraMensagem()
 
-const mostraMensagem=()=>{
-    alert("Hello Labenu")
+
+
+//////////EXERCICIOS DE OBJETOS////////////////
+//1) Um array guarda diversas informações, assim como um objeto. Mas um objeto possui uma caracterização do valor guardado
+// através de cada variavel que podemos criar dentro dele. Um array também guarda vários valores, mas ele armazena todos 
+// do mesmo tipo
+
+//2)
+lado1=prompt("Digite o valor do lado 1")
+lado1=Number(lado1)
+lado2=prompt("Digite o valor do lado 2")
+lado2=Number(lado2)
+
+const criaRetangulo = (lado1, lado2) =>{
+    let perimetro= 2* (lado1+lado2)
+    let area= lado2*lado1
+    return ("Largura: "+lado1+ " Altura: "+lado2+ " Perimetro: "+perimetro+ " Área: "+area)
 }
-mostraMensagem()
+console.log(criaRetangulo(lado1,lado2))
