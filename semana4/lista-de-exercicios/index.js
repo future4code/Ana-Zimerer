@@ -1,4 +1,4 @@
-////EXERCICIOS DE INTERPRETAÇÃO DE CÓDIGO////
+////////////////////////////////////////EXERCICIOS DE INTERPRETAÇÃO DE CÓDIGO//////////////////
 
 // 1) Esta declarado uma função de conversão de moeda que recebe como parametro de fora uma variavel (valorEmDolar). É armazenado em uma variavel 
 // um valor number, digitado pelo usuario, que informara a cotação do dolar. O retorno dessa função é o valorEmDolar multiplicado pela cotação, que
@@ -22,7 +22,7 @@
 // com seu sucessor no index do array, até acabarem os elementos.
 
 
-////EXERCICIOS DE LÓGICA DE PROGRAMAÇÃO////
+////////////////////////////////////EXERCICIOS DE LÓGICA DE PROGRAMAÇÃO//////////////////////
 
 // 1) Podemos usar for of, for ou while. 
 //
@@ -160,7 +160,7 @@
 
 
 
-//////////EXERCICIOS DE OBJETOS////////////////
+/////////////////////////////EXERCICIOS DE OBJETOS/////////////////////////////////////////////
 //1) Um array guarda diversas informações, assim como um objeto. Mas um objeto possui uma caracterização do valor guardado
 // através de cada variavel que podemos criar dentro dele. Um array também guarda vários valores, mas ele armazena todos 
 // do mesmo tipo
@@ -189,24 +189,49 @@
 //console.log("Venha assistir ao filme "+filme.titulo+ ", de "+filme.ano + ", dirigido por "+filme.diretor +" e estrelado por " + filme.elenco[0]+ ", "+ filme.elenco[1] + " e "+ filme.elenco[2])
 
 //4) 
-    const pessoa={
-        nome: 'Otavio',
-        idade: '22',
-        email: 'otavio@gmail',
-        endereco: 'Rua Casa Forte'
-    }
+//const pessoa={
+//    nome: 'Otavio',
+//    idade: '22',
+//    email: 'otavio@gmail',
+//    endereco: 'Rua Casa Forte'
+//}//
+//const anonimizarPessoa =(pessoa)=>{
+//const pessoa2 ={
+//    nome:'Anônimo',
+//    dade: pessoa.idade,
+//    email: pessoa.email,
+//    endereço: pessoa.endereco
+//}
+//return console.log(pessoa2)
+//
+//}
+//console.log(pessoa)
+//anonimizarPessoa(pessoa)
 
-    const anonimizarPessoa =(pessoa)=>{
-    const pessoa2 ={
-        nome:'Anônimo',
-        dade: pessoa.idade,
-        email: pessoa.email,
-        endereço: pessoa.endereco
-    }
-    return console.log(pessoa2)
-    
-    }
-    console.log(pessoa)
-    anonimizarPessoa(pessoa)
-    
-    
+//////////////////////////////////EXERCICIOS FUNÇÕES DE ARRAYS//////////////////////////////////////////
+
+//1)a)
+cadastroDePessoas=[
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+const adultosCadastrados= cadastroDePessoas.map((pessoa, index, array)=>{
+    if (pessoa.idade >= 18){
+        return{
+        nome: pessoa.nome,
+        idade: pessoa.idade 
+    }}   
+})
+console.log (adultosCadastrados)
+
+//b)
+const adolescentesCadastrados= cadastroDePessoas.map((pessoa, index, array)=>{
+    if (pessoa.idade < 18){
+        return{
+        nome: pessoa.nome,
+        idade: pessoa.idade 
+    }}   
+})
+console.log (adolescentesCadastrados)
