@@ -179,12 +179,34 @@
 //console.log(criaRetangulo(lado1,lado2))
 
 //3)
-const filme = {
-    titulo: 'Harry Potter e o prisioneiro de Azkaban',
-    ano: '2003',
-    diretor: 'Alfonso Cuarón',
-    elenco: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint']
-}
+//const filme = {
+//    titulo: 'Harry Potter e o prisioneiro de Azkaban',
+//    ano: '2003',
+//    diretor: 'Alfonso Cuarón',
+//    elenco: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint']
+//}
+//
+//console.log("Venha assistir ao filme "+filme.titulo+ ", de "+filme.ano + ", dirigido por "+filme.diretor +" e estrelado por " + filme.elenco[0]+ ", "+ filme.elenco[1] + " e "+ filme.elenco[2])
 
-console.log("Venha assistir ao filme "+filme.titulo+ ", de "+filme.ano + ", dirigido por "+filme.diretor +" e estrelado por " + filme.elenco[0]+ ", "+ filme.elenco[1] + " e "+ filme.elenco[2])
-//Venha assistir ao filme NOME DO FILME, de ANO, dirigido por DIRETOR e estrelado por ATOR 1, ATRIZ 2,
+//4) 
+    const pessoa={
+        nome: 'Otavio',
+        idade: '22',
+        email: 'otavio@gmail',
+        endereco: 'Rua Casa Forte'
+    }
+
+    const anonimizarPessoa =(pessoa)=>{
+    const pessoa2 ={
+        nome:'Anônimo',
+        dade: pessoa.idade,
+        email: pessoa.email,
+        endereço: pessoa.endereco
+    }
+    return console.log(pessoa2)
+    
+    }
+    console.log(pessoa)
+    anonimizarPessoa(pessoa)
+    
+    
