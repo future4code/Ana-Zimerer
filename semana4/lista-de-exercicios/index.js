@@ -210,7 +210,7 @@
 
 //////////////////////////////////EXERCICIOS FUNÇÕES DE ARRAYS//////////////////////////////////////////
 
-//1)a)
+//////////1)a)
 //cadastroDePessoas=[
 //	{ nome: "Pedro", idade: 20 },
 //	{ nome: "João", idade: 10 },
@@ -236,8 +236,8 @@
 //})
 //console.log (adolescentesCadastrados)
 
-//git commit -m "Exercicios funções de array - 2"
-//2)a)
+
+/////////////2)a)
 //const array = [1, 2, 3, 4, 5, 6]
 //const multiplicaPorDois = (array) =>{
 //    const arrayMultiplicadoPorDois = array.map((numero, index, array) => {
@@ -261,17 +261,53 @@
 //multiplicaPorTres(array)
 
 //c)
-const array = [1, 2, 3, 4, 5, 6]
-const mostraParesEImpares = (array) =>{
-    const arrayDeParesEImpares = array.map((numero, index, array) => {
-        if (numero%2==0){
-            array=`${numero} é par`    
-        }else{
-            array=`${numero} é impar`
-        }
-        return array       
-    })   
-    console.log(arrayDeParesEImpares)  
-}   
-mostraParesEImpares(array)
+//const array = [1, 2, 3, 4, 5, 6]
+//const mostraParesEImpares = (array) =>{
+//    const arrayDeParesEImpares = array.map((numero, index, array) => {
+//        if (numero%2==0){
+//            array=`${numero} é par`    
+//        }else{
+//            array=`${numero} é impar`
+//        }
+//        return array       
+//    })   
+//    console.log(arrayDeParesEImpares)  
+//}   
+//mostraParesEImpares(array)
 
+//git commit -m "Exercicios funções de array - 2"
+////////////3)
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+///a)
+const permiteEntrada = (cadastro) =>{
+    const mostraPessoasPermitidas= pessoas.filter((pessoa, index, array)=>{
+        if ((pessoa.altura>=1.5)&&(pessoa.idade>=14)){
+            return true
+        }else{
+            return false
+        }
+    }) 
+    console.log(mostraPessoasPermitidas) 
+}
+permiteEntrada(pessoas)
+
+///b)
+const bloqueiaEntrada = (cadastro) =>{
+    const mostraPessoasBloqueadas= pessoas.filter((pessoa, index, array)=>{
+        if ((pessoa.altura>=1.5)&&(pessoa.idade>=14)){
+            return false
+        }else{
+            return true
+        }
+    }) 
+    console.log(mostraPessoasBloqueadas) 
+}
+bloqueiaEntrada(pessoas)
