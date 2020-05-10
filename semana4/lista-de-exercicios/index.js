@@ -211,27 +211,67 @@
 //////////////////////////////////EXERCICIOS FUNÇÕES DE ARRAYS//////////////////////////////////////////
 
 //1)a)
-cadastroDePessoas=[
-	{ nome: "Pedro", idade: 20 },
-	{ nome: "João", idade: 10 },
-	{ nome: "Paula", idade: 12 },
-	{ nome: "Artur", idade: 89 } 
-]
-const adultosCadastrados= cadastroDePessoas.map((pessoa, index, array)=>{
-    if (pessoa.idade >= 18){
-        return{
-        nome: pessoa.nome,
-        idade: pessoa.idade 
-    }}   
-})
-console.log (adultosCadastrados)
+//cadastroDePessoas=[
+//	{ nome: "Pedro", idade: 20 },
+//	{ nome: "João", idade: 10 },
+//	{ nome: "Paula", idade: 12 },
+//	{ nome: "Artur", idade: 89 } 
+//]
+//const adultosCadastrados= cadastroDePessoas.map((pessoa, index, array)=>{
+//    if (pessoa.idade >= 18){
+//        return{
+//        nome: pessoa.nome,
+//        idade: pessoa.idade 
+//    }}   
+//})
+//console.log (adultosCadastrados)
+//
+////b)
+//const adolescentesCadastrados= cadastroDePessoas.map((pessoa, index, array)=>{
+//    if (pessoa.idade < 18){
+//        return{
+//        nome: pessoa.nome,
+//        idade: pessoa.idade 
+//    }}   
+//})
+//console.log (adolescentesCadastrados)
+
+//git commit -m "Exercicios funções de array - 2"
+//2)a)
+//const array = [1, 2, 3, 4, 5, 6]
+//const multiplicaPorDois = (array) =>{
+//    const arrayMultiplicadoPorDois = array.map((numero, index, array) => {
+//        array=numero*2
+//        return  array                   
+//    })  
+//    console.log(arrayMultiplicadoPorDois)     
+//}
+//multiplicaPorDois(array)
 
 //b)
-const adolescentesCadastrados= cadastroDePessoas.map((pessoa, index, array)=>{
-    if (pessoa.idade < 18){
-        return{
-        nome: pessoa.nome,
-        idade: pessoa.idade 
-    }}   
-})
-console.log (adolescentesCadastrados)
+//const array = [1, 2, 3, 4, 5, 6]
+//const multiplicaPorTres = (array) =>{
+//    const arrayMultiplicadoPorTres = array.map((numero, index, array) => {
+//        array= numero*3
+//        array= String(array)
+//        return  array                 
+//    })  
+//    console.log(arrayMultiplicadoPorTres)     
+//}
+//multiplicaPorTres(array)
+
+//c)
+const array = [1, 2, 3, 4, 5, 6]
+const mostraParesEImpares = (array) =>{
+    const arrayDeParesEImpares = array.map((numero, index, array) => {
+        if (numero%2==0){
+            array=`${numero} é par`    
+        }else{
+            array=`${numero} é impar`
+        }
+        return array       
+    })   
+    console.log(arrayDeParesEImpares)  
+}   
+mostraParesEImpares(array)
+
