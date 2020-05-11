@@ -275,39 +275,84 @@
 //}   
 //mostraParesEImpares(array)
 
-//git commit -m "Exercicios funções de array - 2"
 ////////////3)
-const pessoas = [
-	{ nome: "Paula", idade: 12, altura: 1.8},
-	{ nome: "João", idade: 20, altura: 1.3},
-	{ nome: "Pedro", idade: 15, altura: 1.9},
-	{ nome: "Luciano", idade: 22, altura: 1.8},
-	{ nome: "Artur", idade: 10, altura: 1.2},
-	{ nome: "Soter", idade: 70, altura: 1.9}
-]
+//const pessoas = [
+//	{ nome: "Paula", idade: 12, altura: 1.8},
+//	{ nome: "João", idade: 20, altura: 1.3},
+//	{ nome: "Pedro", idade: 15, altura: 1.9},
+//	{ nome: "Luciano", idade: 22, altura: 1.8},
+//	{ nome: "Artur", idade: 10, altura: 1.2},
+//	{ nome: "Soter", idade: 70, altura: 1.9}
+//]
+//
 
 ///a)
-const permiteEntrada = (cadastro) =>{
-    const mostraPessoasPermitidas= pessoas.filter((pessoa, index, array)=>{
-        if ((pessoa.altura>=1.5)&&(pessoa.idade>=14)){
-            return true
-        }else{
-            return false
-        }
-    }) 
-    console.log(mostraPessoasPermitidas) 
-}
-permiteEntrada(pessoas)
+//const permiteEntrada = (cadastro) =>{
+//    const mostraPessoasPermitidas= pessoas.filter((pessoa, index, array)=>{
+//        if ((pessoa.altura>=1.5)&&(pessoa.idade>=14)){
+//            return true
+//        }else{
+//            return false
+//        }
+//    }) 
+//    console.log(mostraPessoasPermitidas) 
+//}
+//permiteEntrada(pessoas)
 
 ///b)
-const bloqueiaEntrada = (cadastro) =>{
-    const mostraPessoasBloqueadas= pessoas.filter((pessoa, index, array)=>{
-        if ((pessoa.altura>=1.5)&&(pessoa.idade>=14)){
-            return false
-        }else{
-            return true
-        }
-    }) 
-    console.log(mostraPessoasBloqueadas) 
+//const bloqueiaEntrada = (cadastro) =>{
+//    const mostraPessoasBloqueadas= pessoas.filter((pessoa, index, array)=>{
+//        if ((pessoa.altura>=1.5)&&(pessoa.idade>=14)){
+//            return false
+//        }else{
+//            return true
+//        }
+//    }) 
+//    console.log(mostraPessoasBloqueadas) 
+//}
+//bloqueiaEntrada(pessoas)
+
+//git commit -m "Exercicios funções de array - 4"
+////////4)
+
+
+//a) ///// possui um problema na variavel de saudação para o genero masculino
+const consultas = [
+    { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+    { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+    { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+    { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+const verificaStatusDeConsulta=()=>{   
+
+    const mensagemDeStatus = consultas.map ((pacientes, index, array)=>{
+        let generoSaudacao=""
+        let generoLembrar=""
+        if (pacientes.genero=='feminino'){  
+            generoSaudacao='Sra.'
+            generoLembrar='lembrá-la'          
+            }else if(pacientes.cancelada===false){                
+                return {
+                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+                }
+            }else if (pacientes.cancelada===true){                
+                return {
+                        mensagem:`Olá, ${generoSaudacao}, ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
+                    }            
+            }
+        if (pacientes.genero=='masculino'){ 
+            generoSaudacao='Sr.'
+            generoLembrar='lembrá-lo'           
+            }else if(pacientes.cancelada===false){            
+            return {
+                 mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+                }
+            }else if (pacientes.cancelada===true){                        
+            return {
+                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
+                }            
+        }            
+    })     
+    console.log(mensagemDeStatus) 
 }
-bloqueiaEntrada(pessoas)
+verificaStatusDeConsulta()
