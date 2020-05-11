@@ -313,46 +313,66 @@
 //bloqueiaEntrada(pessoas)
 
 //git commit -m "Exercicios funções de array - 4"
-////////4)
+////////4)possui um problema na variavel de saudação para o genero masculino
+//const consultas = [
+//    { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+//    { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+//    { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+//    { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+//]
+//const verificaStatusDeConsulta=()=>{   
+//
+//    const mensagemDeStatus = consultas.map ((pacientes, index, array)=>{
+//        let generoSaudacao=""
+//        let generoLembrar=""
+//        if (pacientes.genero=='feminino'){  
+//            generoSaudacao='Sra.'
+//            generoLembrar='lembrá-la'          
+//            }else if(pacientes.cancelada===false){                
+//                return {
+//                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+//                }
+//            }else if (pacientes.cancelada===true){                
+//                return {
+//                        mensagem:`Olá, ${generoSaudacao}, ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
+//                    }            
+//            }
+//        if (pacientes.genero=='masculino'){ 
+//            generoSaudacao='Sr.'
+//            generoLembrar='lembrá-lo'           
+//            }else if(pacientes.cancelada===false){            
+//            return {
+//                 mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+//                }
+//            }else if (pacientes.cancelada===true){                        
+//            return {
+//                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
+//                }            
+//        }            
+//    })     
+//    console.log(mensagemDeStatus) 
+//}
+//verificaStatusDeConsulta()
 
-
-//a) ///// possui um problema na variavel de saudação para o genero masculino
-const consultas = [
-    { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
-    { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
-    { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
-    { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
-]
-const verificaStatusDeConsulta=()=>{   
-
-    const mensagemDeStatus = consultas.map ((pacientes, index, array)=>{
-        let generoSaudacao=""
-        let generoLembrar=""
-        if (pacientes.genero=='feminino'){  
-            generoSaudacao='Sra.'
-            generoLembrar='lembrá-la'          
-            }else if(pacientes.cancelada===false){                
-                return {
-                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
-                }
-            }else if (pacientes.cancelada===true){                
-                return {
-                        mensagem:`Olá, ${generoSaudacao}, ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
-                    }            
-            }
-        if (pacientes.genero=='masculino'){ 
-            generoSaudacao='Sr.'
-            generoLembrar='lembrá-lo'           
-            }else if(pacientes.cancelada===false){            
-            return {
-                 mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
-                }
-            }else if (pacientes.cancelada===true){                        
-            return {
-                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
-                }            
-        }            
-    })     
-    console.log(mensagemDeStatus) 
-}
-verificaStatusDeConsulta()
+//5)
+//const contas = [
+//	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+//	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+//	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+//	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+//	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+//	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+//]
+//
+//const atualizaSaldo=(contas)=>{    
+//    contas.forEach((clientes,index,array)=>{
+//        let totalDeCompras=0
+//        for(let valor of clientes.compras){
+//            totalDeCompras+=valor        
+//        }
+//        clientes.saldoTotal=(clientes.saldoTotal)-totalDeCompras
+//    })
+//    console.log(contas)
+//    
+//}
+//atualizaSaldo(contas)
