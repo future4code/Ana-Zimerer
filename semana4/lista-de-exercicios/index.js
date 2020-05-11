@@ -136,21 +136,36 @@
 ////EXERCICIOS DE FUNÇÕES////
 
 //1) 
-////Dá erro quando o  esse exercicio. 
-//const array =[54,22,45,2,4,8]
-//const retornaSegundoMaior = (array)=>{
+//const array =[24,22,45,7,9,8]
+//const retornaSegundoMaiorESegundoMenor = (array)=>{
 //    let segundoMaior=0
 //    let numeroMaior=0
+//    
 //    for(let elemento of array){
-//        if (elemento > numeroMaior){          
-//            numeroMaior=elemento            
+//        if (elemento > numeroMaior){ 
+//            segundoMaior=numeroMaior //22         
+//            numeroMaior=elemento  //45         
 //        }else if (elemento > segundoMaior){
-//             segundoMaior=elemento          
+//             segundoMaior=elemento         
 //        }     
 //    }
-//    return console.log("O segundo maior elemento é: "+segundoMaior)
+//
+//    let segundoMenor=segundoMaior//adicionei os valores de numeros maiores pra conseguir entrar na proxima condição
+//    let numeroMenor=numeroMaior//45
+//    for(let elemento of array){
+//        if (elemento < numeroMenor){ 
+//            segundoMenor=numeroMenor //45      
+//            numeroMenor=elemento  //4         
+//        }else if (elemento < segundoMenor){
+//             segundoMenor=elemento //45         
+//        }     
+//    }
+//
+//    return console.log("O segundo maior elemento é "+segundoMaior+ " e o maior elemento é "+numeroMaior+"\n"+
+//    "O segundo menor é elemento " +segundoMenor+ " e o menor elemento é "+numeroMenor)
 //}
 //retornaSegundoMaiorESegundoMenor(array)
+
 
 //2)
 //const mostraMensagem=()=>{
@@ -313,7 +328,7 @@
 //bloqueiaEntrada(pessoas)
 
 //git commit -m "Exercicios funções de array - 4"
-////////4)possui um problema na variavel de saudação para o genero masculino
+////////4)possui um problema na variavel de saudação para o genero masculino, por isso não está funcionando 100% como solicitado
 //const consultas = [
 //    { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
 //    { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
@@ -342,11 +357,11 @@
 //            generoLembrar='lembrá-lo'           
 //            }else if(pacientes.cancelada===false){            
 //            return {
-//                 mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Estamos enviando esta mensagem para ${generoLembrar} da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+//                 mensagem: `Olá, Sr. ${pacientes.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${pacientes.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
 //                }
 //            }else if (pacientes.cancelada===true){                        
 //            return {
-//                    mensagem: `Olá, ${generoSaudacao} ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
+//                    mensagem: `Olá, Sr. ${pacientes.nome}. Infelizmente, sua consulta marcada para o dia ${pacientes.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`
 //                }            
 //        }            
 //    })     
