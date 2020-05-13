@@ -1,9 +1,9 @@
 import React from 'react';
-import './CardGrande.css';
+import './CardLateral.css';
 
-function CardGrande(props) {
+function CardLateral(props){
     return (
-        <div className="bigcard-container">
+        <div className="bigcard-container-lateral">
             <img src={ props.imagem } />
             <div>
                 <h4>{ props.nome }</h4>
@@ -13,4 +13,4 @@ function CardGrande(props) {
     )
 }
 
-export default CardGrande;
+export default CardLateral;

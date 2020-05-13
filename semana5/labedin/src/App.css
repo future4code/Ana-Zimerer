@@ -2,13 +2,29 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 .App {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;  
   align-items: center;
   margin-top: 30px;
+  width: 100%;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+
+.page-section-left-side{
+  display: flex;
+  flex-direction: column;
+  height: 70vh;  
+  width: 30vw;
+  border:1px solid black;
+}
+.page-section-right-side{
+  display: flex;
+  flex-direction: column;
 }
 
 .page-section-container {
