@@ -10,3 +10,4 @@ export function IconeComContador(props) {
 		<p>{props.valorContador}</p>
 	</div>
 }
+

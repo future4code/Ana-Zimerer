@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './SecaoComentario.css'
+import { NovoComentario } from '../NovoComentario/NovoComentario'
 
 export class SecaoComentario extends Component {
 	state = {
@@ -7,8 +8,12 @@ export class SecaoComentario extends Component {
 	}
 
 	onChangeComentario=(event)=>{
-		this.setState({comentario: event.target.value})	
-		//return console.log({this.state.comentario})				
+		this.setState({comentario: event.target.value})
+		
+	}
+	onClickComent=(event)=>{		
+		return alert(this.state.comentario)
+
 	}
 
 
@@ -21,11 +26,14 @@ export class SecaoComentario extends Component {
 				onChange={this.onChangeComentario}
 			/>
 
-			<button onClick={this.props.aoEnviarComentario}>Enviar</button>	
-			<div className={'comment-container'}>
-            
-        	</div>  
-
+		<button onClick={this.onClickComent}>Enviar</button>	
+		
+		<NovoComentario
+		 labelComentario={this.state.comentario}/>
 		</div>
+            
+        
+
+	
 	}
 }

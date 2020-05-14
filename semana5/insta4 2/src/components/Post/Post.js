@@ -7,7 +7,7 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'//pra mostrar a caixinha quando clicka no comentario
-
+import {NovoComentario} from '../NovoComentario/NovoComentario'
 
 class Post extends React.Component {
   state = {
@@ -41,11 +41,9 @@ class Post extends React.Component {
     })
   }
   
-  aoEnviarComentario = (props) => {
-    
+  aoEnviarComentario = () => {///////////tirei o props    
     //quando essa função for ativada, vai haver uma modificação na variavel comentando e
-    //será adicionado 1 ao contador de comentarios 
-    
+    //será adicionado 1 ao contador de comentarios     
     this.setState({
       //fecha a caixinha
       comentando: false,
@@ -64,9 +62,11 @@ class Post extends React.Component {
     }
 
     let componenteComentario
+    let armazendoComentario
 
     if(this.state.comentando) {//se comentando for true, ou seja, se alguem clickar no icone de comentar
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>//recebe
+      armazendoComentario=<NovoComentario aoEnviar={this.aoEnviarComentario}/>
     }    
     
     ///tem varios this.props
@@ -81,6 +81,7 @@ class Post extends React.Component {
 
       <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
 
+        
       <div className={'post-footer'}>
         <IconeComContador
           icone={iconeCurtida}
@@ -95,6 +96,7 @@ class Post extends React.Component {
         />
       </div>
       {componenteComentario}
+      
      
       
     </div>

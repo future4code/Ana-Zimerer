@@ -8,8 +8,18 @@ class App extends React.Component {
       <div className={'app-container'}>
         <Post
           nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
+          fotoUsuario={'https://picsum.photos/50/50/'}
+          fotoPost={'https://picsum.photos/200/150/'}
+        />
+        <Post
+          nomeUsuario={'anazimerer'}
+          fotoUsuario={'https://picsum.photos/50/50/'}
+          fotoPost={'https://picsum.photos/200/150/'}
+        />
+        <Post
+          nomeUsuario={'otavio.sanches'}
+          fotoUsuario={'https://picsum.photos/50/50/'}
+          fotoPost={'https://picsum.photos/200/150/'}
         />
       </div>
     );
