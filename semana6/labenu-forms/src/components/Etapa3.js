@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PerguntaAberta from './PerguntaAberta/PerguntaAberta';
+import PerguntaOpcoes from './PerguntaOpcoes';
 
 
 const Formulario= styled.div`
@@ -9,27 +11,20 @@ const Formulario= styled.div`
 	width: 20vw;
 
 `
-const InputTerminouCurso= styled.input`
-	width: 20vw;
-	margin: 6px;
-`
-const SelecaoDeEscolaridade= styled.select`
-	width: 20vw;
-	margin: 6px;
-`
-
 class Etapa3 extends React.Component{
     render (){
         return (  
         <Formulario>
             <h1>ETAPA 3</h1>
-            <label>Porque você não terminou um curso de graduação? </label> <InputTerminouCurso/>
-            <label>Você fez algum curso complementar?</label> 
-            <SelecaoDeEscolaridade>  
-                  <option value="Nenhum">Nenhum</option>
-                  <option value="Curso técnico">Curso técnico</option>
-                  <option value="Curso inglês">Curso de inglês</option>                  
-            </SelecaoDeEscolaridade>                 
+            <PerguntaAberta pergunta={"Porque você não terminou um curso de graduação?"}/>            
+            <PerguntaOpcoes> 
+                pergunta={'Você fez algum curso complementar?'}
+                opcoes={[
+                    "Nenhum",
+                    "Curso técnico",
+                    "Curso de inglês",
+                ]}                                 
+            </PerguntaOpcoes>                 
         </Formulario>   
     );    
     }

@@ -1,24 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import PerguntaAberta from './PerguntaAberta/PerguntaAberta';
 
 const Formulario= styled.div`
 	display:flex;
 	flex-direction: column;
 	align-items: center;
 	width: 20vw;
-
-`
-const InputNome= styled.input`
-	width: 20vw;
-	margin: 6px;
-`
-const InputIdade= styled.input`
-	width: 20vw;
-	margin: 6px;
-`
-const InputEmail= styled.input`
-	width: 20vw;
-	margin: 6px;
 `
 const SelecaoDeEscolaridade= styled.select`
 	width: 20vw;
@@ -30,10 +18,9 @@ class Etapa1 extends React.Component{
         return(                       
             <Formulario>
                 <h1>ETAPA 1</h1>
-                <label>Qual seu nome? </label> <InputNome/>
-                <label>Qual sua idade?</label> <InputIdade/>
-                <label>Qual seu email? </label> <InputEmail/>
-                <label>Qual Sua escolaridade? </label>
+                <PerguntaAberta pergunta={"1. Qual o seu nome?"} />
+                <PerguntaAberta pergunta={"2. Qual sua idade?"} />
+                <PerguntaAberta pergunta={"3. Qual seu email?"} />
                 <SelecaoDeEscolaridade>  
                   <option value="Ensino médio incompleto">Ensino médio incompleto</option>
                   <option value="Ensino médio completo">Ensino médio completo</option>

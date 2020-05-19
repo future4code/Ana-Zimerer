@@ -8,8 +8,6 @@ const Formulario= styled.div`
 	width: 40vw;
 
 `
-
-
 class Final extends React.Component{
     render (){
         return (  
