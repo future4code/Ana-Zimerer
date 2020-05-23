@@ -17,14 +17,14 @@ class Etapa3 extends React.Component{
         <Formulario>
             <h1>ETAPA 3</h1>
             <PerguntaAberta pergunta={"Porque você não terminou um curso de graduação?"}/>            
-            <PerguntaOpcoes> 
+            <PerguntaOpcoes 
                 pergunta={'Você fez algum curso complementar?'}
                 opcoes={[
                     "Nenhum",
                     "Curso técnico",
                     "Curso de inglês",
                 ]}                                 
-            </PerguntaOpcoes>                 
+            />                 
         </Formulario>   
     );    
     }

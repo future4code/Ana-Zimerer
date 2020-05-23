@@ -16,35 +16,17 @@ const Seletor= styled.select`
 	width: 20vw;
 	margin: 6px;
 `
-class PerguntaOpcoes extends React.Component{
-    state={
-        perguntas: [""],
-        opcoes: [""]
-    }
+export default function PerguntaOpcoes (props){ 
+  return (
+    <div>
+    	<Pergunta>{props.pergunta}</Pergunta>
+    	<Seletor>
+		{props.opcoes.map(opcao => (
+          <Opcoes value={opcao}>{opcao}</Opcoes>
+        ))}
+    	</Seletor>
+	</div>  
+); 
+      
+}
     
-    render() {        
-        const listaDePerguntas = this.state.perguntas.map((pergunta, index, array) => {
-          return (
-            <div>
-                <Pergunta>{this.props.pergunta}</Pergunta>
-                <Seletor>
-                    <Opcoes value={this.props.opcoes}/> 
-                </Seletor>
-            </div>                 
-          );
-        }); 
-
-        //const listaDeOpcoes = this.state.opcoes.map((opcao) => {
-        //    return
-        //    {this.props.opcoes}                                            
-        //   }); 
-//
-        return (
-        <div>
-            {listaDePerguntas}           
-        </div>
-        );
-      }
-    }
-    
-export default PerguntaOpcoes;
