@@ -1,0 +1,15 @@
+/*O card lateral é o componente lateral esquerdo, com foto, apresentação, skilss*/
+.bigcard-container-lateral{
+    text-align: center;
+    width: 100%;
+    height: 70%;
+
+}
+.bigcard-container-lateral>img{  
+    justify-content: flex-end;
+    align-items: center; 
+    width: 90px;
+    margin-right: 10px;
+    border-radius: 50%;
+    padding-top:10px;
+}

@@ -1,0 +1,25 @@
+.page-section-container{
+    width: 500px;
+}
+.image-button-container {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center; 
+    margin: 10px;     
+    
+}
+
+.image-button-container > img {
+    width: 3.7vw;
+    height: 4vh;
+    margin: 5px;
+    border-radius: 50%;   
+    
+   
+}
+.image-button-container > img:hover {
+    width: 4.2vw;
+    height: 4.2vh;
+    
+   
+}

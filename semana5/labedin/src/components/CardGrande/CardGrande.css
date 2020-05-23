@@ -1,0 +1,26 @@
+/*Esse card é responsavel pelas infos no componente do lado direito*/
+.bigcard-container {
+    display: flex;    
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 10px;
+    height: 45%;
+    width: 100%;
+}
+
+.bigcard-container > img {
+    width: 8.5vw;
+    height: 9.5vh;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.bigcard-container h4 {
+    margin-bottom: 5px;
+}
+
+.bigcard-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
