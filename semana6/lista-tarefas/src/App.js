@@ -28,7 +28,7 @@ class App extends React.Component {
 	{	
 		id: Date.now(),
 		texto: 'Lavar louça',
-		completa: true
+		completa: false
 	}
 	],
       inputValue: '',
@@ -36,8 +36,9 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-
-  };
+	  const novaTarefa = this.state
+	  localStorage.setItem("tarefa", JSON.stringify(novaTarefa))
+	};
 
   componentDidMount() {
 
@@ -60,16 +61,24 @@ class App extends React.Component {
 	}
 
   selectTarefa = (id) => {
-    //tarefas.forEach((tarefa, index, array)=>{
-    //  if (tarefa.id === this.props.id){
-    //    tarefa.completa=true
-    //  }else{
-    //    tarefa.completa=false
-    //  }      
-    //})  
-  }
+	console.log('clickado')
+    const listaDeTarefas = this.state.tarefas.map(tarefa =>{
+      	if (id === tarefa.id){
+      	  const novaListaDeTarefas= {
+      	    ... tarefa, 
+      	    completa: !tarefa.completa}
+      	    return novaListaDeTarefas
+      	} else {
+      	  return tarefa
+      	}
+    	})
+	this.setState({tarefas: listaDeTarefas}) 
+	}
 
   onChangeFilter = (event) => {
+	  const valorFilter = event.target.value
+	  console.log(valorFilter)
+	  this.setState({filter:valorFilter})
 
   }
 
@@ -105,12 +114,11 @@ class App extends React.Component {
         </InputsContainer>
 
         <TarefaList>
-          {listaFiltrada.map(tarefa => { //pega cada tarefa que estava filtrada e cria uma lista
+          {listaFiltrada.map(tarefa => { 
             return (
               <Tarefa
-                completa={tarefa.completa} //mandando por props se a tarefa ta completa
-				onClick={() => this.selectTarefa(tarefa.id)} // quando clickar na linha, manda pro seleciona tarefas qual tarefa que é
-				//precisa estar declarada a função pra passar argumento
+                completa={tarefa.completa} 
+				onClick={() => this.selectTarefa(tarefa.id)} 
               >
                 {tarefa.texto}
               </Tarefa>
