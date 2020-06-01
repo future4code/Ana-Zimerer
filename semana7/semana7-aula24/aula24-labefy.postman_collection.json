@@ -1,0 +1,21 @@
+{
+	"info": {
+		"_postman_id": "ed46fafc-2781-4223-9cc6-b274facfd536",
+		"name": "aula24-labefy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Playlists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
