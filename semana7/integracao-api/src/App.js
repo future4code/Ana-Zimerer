@@ -30,7 +30,7 @@ class App extends React.Component {
 
   		return (
   		  <div className="App">
-  		     <button onClick={this.OnClickTrocaDeTela}>Ir para página de {this.state.telaRenderizada}</button>        
+  		     <button onClick={this.OnClickTrocaDeTela}>Ir para página de {this.state.telaRenderizada} </button>        
   		   	{renderizaTela()}       
   		  </div>
   		);
