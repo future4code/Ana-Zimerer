@@ -6,85 +6,55 @@ class CardRegister extends React.Component{
 	state={		
 		name: '',
     	email: ''		
-	}             
+	}         
 	  
-	componentDidMount = () =>{
-		const axiosConfig={
-			headers: {
-				Authorization: "anapaula-zimerer-mello"
-			}
-		};
-		//const body={
-		//	name: this.state.name,
-		//	email:this.state.email
-		//};
-
-		axios
-			.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',  
-			axiosConfig
-		)
-		.then ((response)=>{
-			this.setState({user: response.data})
-			alert('Ae')
-		})
-		.catch ((erro) =>{
-			alert('erro')
-		})
-	}
-
-    //onChanges
+	//onChanges
     onChangeInputUsuario =(event)=>{
         this.setState({name: event.target.value})
-    }
-    OnChangeInputEmail =(event)=>{
+	}
+	onChangeInputEmail =(event)=>{
         this.setState({email: event.target.value})
-    }
-
+	}
+	
     //onClicks
-	onClickSalvar=(event)=>{
+	OnClickSalvarUsuario=()=>{
 		const axiosConfig={
 			headers: {
 				Authorization: "anapaula-zimerer-mello"
 			}
-		};
+		}
 
 		const body={
-
 			name: this.state.name,
-			email:this.state.email
-		};
-		axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', 
+    		email: this.state.email
+		}
+		axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
 		body,
 		axiosConfig
-		)
-		.then (()=>{
-			response.data
-			alert('Usuario cadastrado')
+		).then(()=>{
+			alert('Usuario enviado')
+			this.setState({name: '', email: ''})
+		}).catch((e)=>{
+			alert('Erroooooooo')
 		})
-		.catch ((erro) =>{
-			alert('erro')
-		})
-	
+		
 	}  
 
-    render(){   
-		 
+    render(){   		 
        return (        
             <div>
               <input
-			  	type={'text'}
-                value={this.state.name}
-                placeholder={"Usuario"}
+			    value={this.state.name}
+                placeholder={'Usuario'}
                 onChange={this.onChangeInputUsuario}
               />
-              <input
-			  	type={'text'}
-                value={this.state.email}
-                placeholder={"Email"}
+			   <input
+			    value={this.state.email}
+                placeholder={'E-mail'}
                 onChange={this.onChangeInputEmail}
-              />
+              />     	  
               
-              <button onClick={this.OnClickSalvar}>Salvar</button>
+              <button onClick={this.OnClickSalvarUsuario}>Salvar</button>
             </div>
         );
     }

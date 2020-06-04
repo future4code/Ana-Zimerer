@@ -1,61 +1,71 @@
 import React from 'react';
 import axios from 'axios';
+import Styled from 'styled-components';
+
 
 class CardList extends React.Component{
     state={
 		users:[{
+			id: '02ab59d3-910e-440a-a6ae-3d4b73b11b96',
 			name: '',
         	email: ''   	
 		}]	
 	}
 	
 	componentDidMount = () =>{
+		this.buscaListaDeUsuarios();
+	}
+
+	buscaListaDeUsuarios = ()=>{
 		const axiosConfig={
 			headers: {
 				Authorization: "anapaula-zimerer-mello"
 			}
 		};
 
-		//const body={
-		//	name: this.state.name,
-		//	email:this.state.email
-		//};
-
 		axios
 			.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',  
 			axiosConfig
 		)
 		.then ((response)=>{
-			this.setState({user: response.data})
-			alert('Ae')
+			this.setState({users: response.data})
+			alert('OK')
 		})
 		.catch ((erro) =>{
-			alert('erro')
+			alert('Erro')
 		})
 	}
-
-	
-    onClickDeleteUser=(name)=>{
-		//axios.delete('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/id')
-	
+    onClickDeleteUser=(id)=>{
+		const axiosConfig={
+			headers:{
+				Authorization: "anapaula-zimerer-mello"
+			}
+		}
+		axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`, axiosConfig
+		)
+		.then(()=>{
+			alert('Usuario deletado')
+			this.buscaListaDeUsuarios()
+		})	
     }
     render(){
-        const listaDeUsuarios = this.state.users.map(users => {
+        const listaDeUsuarios = this.state.users.map(user=> {
 			return (
 				<li>
-					{users.name}
-					<span onClick={() => {this.onClickDeleteUser(users.name)}}>X</span>                    
+					{user.name}
+					<span onClick={() => {this.onClickDeleteUser(user.id)}}>X</span>                    
 				</li>
 			);
 		})  
     	return(
-   	 	    <div>
+   	 	    <>
    	 	        <p>Usuarios Cadastrados</p>
    	 	        <ul>
    	 	            {listaDeUsuarios}
    	 	        </ul>
-   	 	    </div>
+   	 	    </>
    	 	);
 	}
 }
 export default CardList;
+a
