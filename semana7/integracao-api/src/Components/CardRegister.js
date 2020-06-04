@@ -35,7 +35,7 @@ class CardRegister extends React.Component{
 			alert('Usuario enviado')
 			this.setState({name: '', email: ''})
 		}).catch((e)=>{
-			alert('Erroooooooo')
+			alert(`Usuario não enviado. Erro:${e.data}`)
 		})
 		
 	}  

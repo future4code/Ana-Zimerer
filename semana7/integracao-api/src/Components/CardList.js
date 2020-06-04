@@ -29,10 +29,10 @@ class CardList extends React.Component{
 		)
 		.then ((response)=>{
 			this.setState({users: response.data})
-			alert('OK')
+			console.log('Buscando dados...')
 		})
 		.catch ((erro) =>{
-			alert('Erro')
+		
 		})
 	}
     onClickDeleteUser=(id)=>{
