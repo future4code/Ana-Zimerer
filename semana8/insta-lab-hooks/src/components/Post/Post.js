@@ -8,7 +8,7 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 
-
+////teste
 const Post = (props) => {
   const [curtido, setCurtido]= useState (false)
   const [numeroCurtidas, setNumeroCurtidas]= useState(0)
