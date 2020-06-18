@@ -2,40 +2,57 @@ import styled from 'styled-components';
 
 export const ContainerRoot = styled.div`
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    
 `
 export const Container = styled.div`
     display:flex;
     flex-direction: column;
     justify-content: center;
     height: 90%;
-    width: 40%;
+    width: 400px;
 `
 export const Header = styled.div`
-    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
     width: 100%;
-    border: solid black;
-   
-    img{
-        width: 40%;
-        height: 50%;
+    border: 1px solid black;   
+    img{/*logo*/
+        width: 30%;
+        height: 60%;
     }
 `
 export const SectionPhotos = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 50%;
     width: 100%;
-    img{
-        width: 55%;
-        height: 96%;
-        border: 1px solid black;
+    img{/*photos of lovers*/
+        width: 100%;
+        height: 55vh;
+        border: solid black;
     }
 `
 export const DivInfos = styled.div`
-    height: 20%;
     width: 100%;
-    border: 1px solid black;
 `
 export const SectionButtons = styled.section`
-    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
     width: 100%;
+    border: 1px solid black;
+    button{
+        height: 70px;
+        width: 70px;
+        border-radius: 90%;
+        margin: 10px;
+        
+        
+    }
 `
