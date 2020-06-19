@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {ContainerRoot, Container, Header , SectionPhotos, DivInfos, SectionButtons} from './components/InicialPage/styles.js'
+import {ContainerRoot, Container, Header , SectionPhotos, SectionButtons} from './components/MatchsPage/styles.js'
 import axios from 'axios'
 import logo from './components/assets/imgs/logo.png'
 import MatchsPage from './components/MatchsPage/index.js'
-import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/css/materialize.min.css'
+
 function App() {
 	const [profiles, setProfiles]=useState({})
 	const [count, setCount] = useState(0)
@@ -34,8 +35,8 @@ function App() {
 		.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/anapaula/choose-person', body)
 		.then(()=>{						
 		})
-		.catch((err)=>{
-			alert(err)
+		.catch((erro)=>{
+			alert(erro)
 		})	
 	}
 	
@@ -46,36 +47,45 @@ function App() {
 	const onCLickSeeMatchs = ()=>{
 		setChangePage(!changePage)		
 	}
+
   	return (
-    	<ContainerRoot>
+    	<ContainerRoot>			
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+
+			{/*Ternário pra mudança de página*/}
 			{changePage? <MatchsPage />: 
-    	    <Container>
-    	    	<Header>
-    	    	 	 <img src={logo} alt="logo"/>
-					<button onClick={onCLickSeeMatchs}>matchs</button>					
-    	    	</Header>
-    	    	<SectionPhotos>	
-				<div class="row">
-  				  	<div class="col s12 m7">
-  				    	<div class="card">
-  				      		<div class="card-image">
-  				        		<img src={profiles.photo}/>
-  				        		<span class="card-title">{profiles.name}, {profiles.age}</span>
-  				         	</div>
-  				      		<div class="card-content">
-  				        		<p>{profiles.bio}</p>
-  				    		</div>   				    
-  				  		</div>
-  					</div>	
-				</div>			
-				</SectionPhotos>
-				<SectionButtons>
-					<button onClick={onClickNo} class="btn-floating waves-effect waves-light red"> <i class="material-icons">close</i></button>
-					<button onClick={onClickYes} class="waves-effect waves-light btn-large"> <i class="material-icons">favorite</i></button>
-				</SectionButtons>  
-			</Container>
-		}    
+    	    	<Container>				
+					<div class="card-stacked">
+    	    			<Header>
+    	    			 	<img src={logo} alt="logo"/>
+							<a onClick={onCLickSeeMatchs} class="waves-effect waves-light btn  pink darken-1">
+								<i class="material-icons left">playlist_add_check</i>
+							</a>					
+    	    			</Header>
+					</div>				
+    	    		<SectionPhotos class="col s12 m7">  				  
+  					    <div class="card">
+  					    	<div class="card-image">
+  					    		<img src={profiles.photo}/>
+  					    		<span class="card-title">{profiles.name}, {profiles.age}</span>
+  					     	</div>
+  					    	<div class="card-content">
+  					    		<i><p>" {profiles.bio} "</p></i>
+  					    	</div>   				    
+  					  	</div>  									
+					</SectionPhotos>		
+					<div class="card-stacked">
+						<SectionButtons class= "card-content">
+							<button onClick={onClickNo} class="waves-effect waves-light btn  deep-purple darken-4" > 
+								<i class="material-icons">close</i>
+							</button>
+							<button onClick={onClickYes} class="waves-effect waves-light btn pink darken-1"> 
+								<i class="material-icons">favorite</i>
+							</button>
+						</SectionButtons>  
+					</div>
+				</Container>
+			}    
     	</ContainerRoot>
     );
 }
