@@ -1,9 +1,26 @@
 import React from 'react';
+import styled from 'styled-components'
 
+export const ContainerRoot =styled.div`	
+    display:flex;
+    justify-content: center;
+`
+
+export const Forms =styled.form`
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 20vw;
+	input,textarea, button{
+		margin: 2.5px;
+		width: 15vw;
+	}
+`
 export default function Adm_CreateTrip(){
     return(
-        <div>
-            <div>
+        <ContainerRoot>
+            <Forms>
                 <label>Nome da viagem</label>
                 <input type="text"/>
                 <label>Planeta:</label>
@@ -13,7 +30,8 @@ export default function Adm_CreateTrip(){
                 <input placeholder="upload de imagem"/>
                 <label>Descrição:</label>
                 <textarea />
-            </div>
-        </div>
+                <button>CRIAR VIAGEM!</button>
+            </Forms>
+        </ContainerRoot>
     );
 }

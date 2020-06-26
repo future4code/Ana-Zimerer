@@ -1,7 +1,8 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import api from '../../Service/api';
-import styled from 'styled-components';
+import api from '../../Service/api'
+import styled from 'styled-components'
+import TripDetails from '../TripDetails/index.js'
 
 const GridOfTrips=styled.div`
     display: flex;
@@ -25,12 +26,15 @@ const GridOfTrips=styled.div`
 `
 export default function ListTrips(){
     const [trips, setTrips]=useState([]);
+    const [selectedTrip, setSelectedTrip]=useState([])
     const [search, setSearch]=useState("");
+    const [showsTripDetailsPage, setShowsTripDetailsPage]=useState(false);
+    const [idSelectedTrip, setIdSelectedTrip]=useState()
     const history = useHistory()
 
     useEffect(()=>{
         api
-            .get('')
+            .get('trips')
             .then((response)=>{
                 setTrips(response.data.trips)
             })
@@ -47,26 +51,37 @@ export default function ListTrips(){
         setSearch(event.target.value)       
     })
 
-    const onClickSeeTripDetails = ((id)=>{
-        history.push("/trips/details")
+    const onClickSeeTripDetails = ((id, trip)=>{
+        setShowsTripDetailsPage(!showsTripDetailsPage)
+        console.log("id da viagem escolhida"+ id)
+        setIdSelectedTrip(id)
+        //setSelectedTrip(trip)
+        //console.log(selectedTrip)
+        selectedTrip.push(trip)   
+        //console.log(selectedTrip)       
     })
 
     const listOfTrips = trips.map((trip)=>{
         return(
             <div>
                 <p>{trip.name}</p>
-                <img src="https://lh3.googleusercontent.com/proxy/1WH4E8YiKpZUPLfUjA87CyeCdrb7zhO9mzp-MCZTvSkxcFbd_Y0UtTjpcEi6KkYo33WbCcR48TC-ploKHyt59UvsqpKHQEgRANIUQYIPgYjzVT5j_1ny7CN6u-yqT06p8bcDB2G84ajcFIcl4ifhmHYx18E_RvXEkNhLTTKPOCUGWiw"/>
-                <button onClick={() =>{onClickSeeTripDetails(trip.id)}}>Visualizar viagem</button>
+                <img src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
+                <button onClick={() =>{onClickSeeTripDetails(trip.id, trip)}}>Visualizar viagem</button>
             </div>
         )
     })
 
     return(
         <div>
-            <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/>            
-            <GridOfTrips>
-                {listOfTrips} 
-            </GridOfTrips>                 
-        </div>
-    )
-}
+            {showsTripDetailsPage ?
+                 <TripDetails id={idSelectedTrip} /> : <>          
+                <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/>            
+                <GridOfTrips>
+                    {listOfTrips} 
+                </GridOfTrips>   
+                </> 
+            } 
+
+        </div>  
+    );
+} 
