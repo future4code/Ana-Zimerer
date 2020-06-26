@@ -1,7 +1,6 @@
-import React, { useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 const Div=styled.div`
     display: flex;
     justify-content: center;
@@ -26,10 +25,10 @@ export default function Home(){
     return(
         <Div>
             <Link to={"/trips/list"}>
-                <button onCLick={onCLickUserAccess}>Me candidatar a uma viagem!</button>
+                <button onCLick={onCLickUserAccess}>Explorar viagens!</button>
             </Link>
             <Link to={"/login"}>
-                <button onClick={onClickAdmAccess}>Acesso Administrativo!</button>
+                <button onClick={onClickAdmAccess}>Acessar área restrita</button>
             </Link>
         </Div>
     )

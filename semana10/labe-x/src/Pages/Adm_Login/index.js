@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import api from '../../Service/api'
 import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
+import { ContainerRoot } from '../Adm_CreateTrip'
 
 export const Forms =styled.form`
 	display:flex;
@@ -28,7 +29,8 @@ export default function Adm_Login(){
 		setShowSignUp(false)
 	})
 
-	const onClickNewSignUp=(()=>{		
+	const onClickNewSignUp=((event)=>{
+		event.preventDefault();	
 		const body={
 			email: email,
 			password: password
@@ -41,10 +43,13 @@ export default function Adm_Login(){
 			})
 			.catch((error)=>{
 				alert(error)
-			})		
+		})	
+
+		onClickLogin();
 	})
 
 	const onClickLogin=(()=>{
+
 		const body={
 			email: email,
 			password: password
@@ -52,7 +57,7 @@ export default function Adm_Login(){
 		api
 			.post('/login', body)
 			.then((response)=>{
-				localStorage.setItem('token', JSON.stringify(response.data.token)); 
+				localStorage.setItem('token', (response.data.token)); 
 				alert('Logado')
 			})
 			.catch((error)=>{
@@ -71,6 +76,7 @@ export default function Adm_Login(){
 	})
 	
     return(
+		<ContainerRoot>
         <Forms>
           	<label>Email:</label> 
           	<input value={email} type="email" onChange={onChangeInputEmail}/>
@@ -81,14 +87,15 @@ export default function Adm_Login(){
           	  		<label>Confirme a senha:</label>
           	  		<input type="number"/>  
           	  		<button onClick={onClickNewSignUp}>Cadastrar</button>  
-			  		<button onClick={onClickComebackToLogin}>voltar</button> 
+			  		<button onClick={onClickComebackToLogin}> Ops, já tenho cadastro </button> 
           		</> : 
           		<>
-			  		<button onClick={onClickShowSignUp}>Não tenho cadastro</button>
+			  		<button onClick={onClickShowSignUp}>Criar um cadastro!</button>
           	  		<button onClick={onClickLogin}>Entrar</button> 
           		</>
             }
             
 		</Forms>
+		</ContainerRoot>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import api from '../../Service/api'
 import styled from 'styled-components'
 import TripDetails from '../TripDetails/index.js'
@@ -31,7 +31,7 @@ export default function ListTrips(){
     const [showsTripDetailsPage, setShowsTripDetailsPage]=useState(false);
     const [idSelectedTrip, setIdSelectedTrip]=useState()
     const history = useHistory()
-
+    
     useEffect(()=>{
         api
             .get('trips')
@@ -53,12 +53,15 @@ export default function ListTrips(){
 
     const onClickSeeTripDetails = ((id, trip)=>{
         setShowsTripDetailsPage(!showsTripDetailsPage)
-        console.log("id da viagem escolhida"+ id)
         setIdSelectedTrip(id)
-        //setSelectedTrip(trip)
-        //console.log(selectedTrip)
-        selectedTrip.push(trip)   
-        //console.log(selectedTrip)       
+        selectedTrip.push(trip)
+        history.push(`/trips/details${id}`)  
+        localStorage.setItem('idOfTrip', (id)); 
+    })
+
+    const goToCandidaturePage = ((id)=>{
+        history.push(`/trips/candidature${id}`)    
+        localStorage.setItem('idOfTrip', (id));
     })
 
     const listOfTrips = trips.map((trip)=>{
@@ -67,6 +70,7 @@ export default function ListTrips(){
                 <p>{trip.name}</p>
                 <img src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
                 <button onClick={() =>{onClickSeeTripDetails(trip.id, trip)}}>Visualizar viagem</button>
+                <button onClick={() =>{goToCandidaturePage(trip.id)}}>Me candidatar!</button>
             </div>
         )
     })

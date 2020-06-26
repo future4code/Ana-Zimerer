@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
 
 const Head = styled.div`
     width: 98%;
@@ -12,8 +11,7 @@ const Head = styled.div`
     display: flex;
     justify-content: center;
     align-items: center; 
-    a{
-        
+    a{       
         margin: 5px;
         text-decoration: none;
         color: white;
