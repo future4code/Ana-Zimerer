@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from "react-dom";
 import { Switch, Route , BrowserRouter} from 'react-router-dom'
 
 import Home from '../Pages/Home/index.js';

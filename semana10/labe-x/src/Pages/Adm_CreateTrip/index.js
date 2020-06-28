@@ -1,4 +1,5 @@
-import React, { useEffect, useState} from 'react'
+import React, { useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
 import api from '../../Service/api'
 
@@ -19,10 +20,19 @@ export const Forms =styled.form`
 	}
 `
 export default function Adm_CreateTrip(){
-    const [token, setToken]=useState(localStorage.getItem('token'))
+    const [token, setToken]=useState()
+    const history=useHistory();
+
+    useEffect(()=>{
+        setToken(localStorage.getItem('token'))
+
+      if (token === null){
+          alert('Indique um email e senha para continuar')
+          history.push('/login')
+      }   
+    }, [token]);
 
     const onClickCreateTrip = (event) =>{
-        console.log('token' +token)
         event.preventDefault();
         const axiosConfig={
             headers:{
@@ -42,8 +52,10 @@ export default function Adm_CreateTrip(){
             .then(()=>{
             })
             .catch((error)=>{
-                alert(error)
-            });
+                alert('Complete os campos corretamente')
+                history.push('/login')        
+            });  
+            
     }
 
     return(

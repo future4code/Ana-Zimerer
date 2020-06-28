@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react'
+import {useHistory} from 'react-router'
 import api from '../../Service/api.js'
 import styled from 'styled-components'
 
@@ -36,26 +37,32 @@ const Candidate=styled.div`
 `
 export default function TripDetails(){
     const [tripDetails, setTripDetails]=useState({})
-    const [token, setToken]=useState(localStorage.getItem('token'))
-    const [idOfTrip, setIdOfTrip]=useState(localStorage.getItem('idOfTrip'))
+    const [token]=useState(localStorage.getItem('token'))
+    const [idOfTrip]=useState(localStorage.getItem('idOfTrip'))
     const [candidates, setCandidates]=useState([]);
+    const history=useHistory()
 
     useEffect(()=>{
-        const axiosConfig={
-			headers: {
-				auth: token
-			}
-        }        
-        api
-            .get(`/trip/${idOfTrip}`, axiosConfig)
-            .then((response)=>{
-                setTripDetails(response.data.trip)
-                setCandidates(response.data.trip.candidates)
-                
-            })
-            .catch((error)=>{
-                alert(error)
-            });
+        if (token !== null && token !==0 && token!==undefined){           
+            const axiosConfig={
+		    	headers: {
+		    		auth: token
+		    	}
+            }        
+            api
+                .get(`/trip/${idOfTrip}`, axiosConfig)
+                .then((response)=>{
+                    setTripDetails(response.data.trip)
+                    setCandidates(response.data.trip.candidates)
+                })
+                .catch((error)=>{
+                    alert(error)
+                });
+        }else{
+            alert('Entre com o login e senha para acessar mais detalhes da viagem')
+            history.push('/login')
+        }
+
     }, [token]);
 
     const listOfCandidates=candidates.map((candidate)=>{
@@ -80,7 +87,7 @@ export default function TripDetails(){
                     <p>{tripDetails.date}</p>
                     <p>Duração: {tripDetails.durationInDays} dias</p>
                 </p>
-                <img width="200px" height="200px"src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
+                <img alt="imagem da viagem" width="200px" height="200px"src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
             </div> 
             <div>
                 <hr />  

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 const Head = styled.div`
@@ -19,14 +19,41 @@ const Head = styled.div`
             color:#F28705;
         }
     }
+    p{
+        justify-content: flex-end;
+    }
 `
-export default function Header(){
+export default function Header(){   
+    const [token, setToken]=useState()
+    const [login, setLogin]=useState()  
+    
+    useEffect(()=>{
+        setToken(localStorage.getItem("token"))
+        if ((token === null) || (token === "") || (token === undefined)){
+            setLogin(false)
+            localStorage.setItem('login', false)      
+         }else{
+            setLogin(true)
+            localStorage.setItem('login', true)
+         }     
+    }, [localStorage.getItem('login')]);
+
+    const onClickLogout =() =>{
+        localStorage.removeItem("token")
+        localStorage.setItem('login', false) 
+        setLogin(false)       
+    }
+
     return (
         <Head>            
-             <a href="http://localhost:3000/">Home</a>
-             <a href="http://localhost:3000/trips/list">Viagens</a>
-             <a href="http://localhost:3000/trips/create">Criar viagem</a>
-             <a href="http://localhost:3000/login">Acesso restrito</a>
+            <a href="http://localhost:3000/">Home</a>
+            <a href="http://localhost:3000/trips/list">Viagens</a>
+            <p>
+                {login? <>
+                <a href="http://localhost:3000/trips/create">Criar viagem</a>
+                <label>Logado!</label><button onClick={onClickLogout}>Sair!</button></> :
+                <><a href="http://localhost:3000/login" >Login</a></>}
+            </p>
         </Head>
     );
 }

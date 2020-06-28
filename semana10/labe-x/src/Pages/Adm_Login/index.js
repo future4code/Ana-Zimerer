@@ -18,7 +18,7 @@ export const Forms =styled.form`
 export default function Adm_Login(){
 	const [showSignUp, setShowSignUp]=useState(false);
 	const [email, setEmail]=useState()
-	const [password, setPassword]=useState()
+	const [password, setPassword]=useState()	
 	const history=useHistory();
 
 	const onClickShowSignUp=(()=>{
@@ -38,8 +38,8 @@ export default function Adm_Login(){
 		api
 			.post('/signup', body)
 			.then(()=>{
-				alert('Adm cadastrado')
-				onClickLogin();
+				alert(`Cadastro de ${email} realizado com sucesso!`)
+				
 			})
 			.catch((error)=>{
 				alert(error)
@@ -49,7 +49,6 @@ export default function Adm_Login(){
 	})
 
 	const onClickLogin=(()=>{
-
 		const body={
 			email: email,
 			password: password
@@ -58,21 +57,22 @@ export default function Adm_Login(){
 			.post('/login', body)
 			.then((response)=>{
 				localStorage.setItem('token', (response.data.token)); 
-				alert('Logado')
+				localStorage.setItem('login', (true))
+				alert(`O usuario ${email} está logado! `)
+				
 			})
 			.catch((error)=>{
-				alert(error)
+				alert(`Este email ou senha não são válidos. Erro:${error} `)
 		})
 		history.push('trips/list')
 	})
-
+	
 	const onChangeInputEmail=((event)=>{
 		setEmail(event.target.value)	
 	})
 
 	const onChangeInputPassword=((event)=>{
 		setPassword(event.target.value)	
-		console.log(password)	
 	})
 	
     return(
@@ -87,14 +87,13 @@ export default function Adm_Login(){
           	  		<label>Confirme a senha:</label>
           	  		<input type="number"/>  
           	  		<button onClick={onClickNewSignUp}>Cadastrar</button>  
-			  		<button onClick={onClickComebackToLogin}> Ops, já tenho cadastro </button> 
+			  		<button onClick={onClickComebackToLogin}> Voltar ao login! </button> 
           		</> : 
           		<>
-			  		<button onClick={onClickShowSignUp}>Criar um cadastro!</button>
-          	  		<button onClick={onClickLogin}>Entrar</button> 
+				    <button onClick={onClickLogin}>Entrar</button> 
+			  		<button onClick={onClickShowSignUp}>Criar um novo cadastro!</button>          	  		
           		</>
-            }
-            
+            }            
 		</Forms>
 		</ContainerRoot>
     )

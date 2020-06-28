@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import {useHistory, useParams} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import api from '../../Service/api'
 import styled from 'styled-components'
 import TripDetails from '../TripDetails/index.js'
@@ -26,7 +26,7 @@ const GridOfTrips=styled.div`
 `
 export default function ListTrips(){
     const [trips, setTrips]=useState([]);
-    const [selectedTrip, setSelectedTrip]=useState([])
+    const [selectedTrip]=useState([])
     const [search, setSearch]=useState("");
     const [showsTripDetailsPage, setShowsTripDetailsPage]=useState(false);
     const [idSelectedTrip, setIdSelectedTrip]=useState()
@@ -68,7 +68,7 @@ export default function ListTrips(){
         return(
             <div>
                 <p>{trip.name}</p>
-                <img src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
+                <img alt={`Imagem da viagem ${trip.name}`} src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
                 <button onClick={() =>{onClickSeeTripDetails(trip.id, trip)}}>Visualizar viagem</button>
                 <button onClick={() =>{goToCandidaturePage(trip.id)}}>Me candidatar!</button>
             </div>
@@ -79,13 +79,12 @@ export default function ListTrips(){
         <div>
             {showsTripDetailsPage ?
                  <TripDetails id={idSelectedTrip} /> : <>          
-                <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/>            
+                <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/>        
                 <GridOfTrips>
                     {listOfTrips} 
                 </GridOfTrips>   
                 </> 
             } 
-
         </div>  
     );
 } 
