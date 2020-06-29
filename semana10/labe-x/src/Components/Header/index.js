@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import logo from '../../Imgs/logo.PNG'
+import { useHistory} from 'react-router-dom'
 
 const Head = styled.div`
     width: 99.5%;
@@ -46,7 +47,7 @@ const Head = styled.div`
 `
 export default function Header(){   
     const [token, setToken]=useState()
-    const [login, setLogin]=useState()  
+    const [login, setLogin]=useState()
     
     useEffect(()=>{
         setToken(localStorage.getItem("token"))
@@ -67,17 +68,18 @@ export default function Header(){
 
     return (
         <Head> 
-            <img src={logo} alt="logo"/>           
-            <a href="http://localhost:3000/">Home</a>
-            <a href="http://localhost:3000/trips/list">Viagens</a>
+            <img src={logo} alt="logo"/> 
+                 
+                <a href="/">Home</a>
+                <a href="/trips/list">Viagens</a>
             <p>
-                {login?(<><a href="http://localhost:3000/trips/create">Criar viagem</a>
+                {login?(<><a href="/trips/create">Criar viagem</a>
                     <span>
                         <span>Logado!</span>
                         <button onClick={onClickLogout} class="waves-effect waves-light btn-small red">Sair!</button>
                     </span></>)
                 :
-                (<><a href="http://localhost:3000/login">Login</a></>)}
+                (<><a a href="/login">Login</a></>)}
             </p>
         </Head>
     );
