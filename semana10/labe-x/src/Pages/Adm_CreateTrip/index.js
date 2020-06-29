@@ -7,7 +7,6 @@ export const ContainerRoot =styled.div`
     display:flex;
     justify-content: center;
 `
-
 export const Forms =styled.form`
 	display:flex;
 	flex-direction: column;
@@ -29,6 +28,7 @@ export const Forms =styled.form`
     }
 `
 export default function Adm_CreateTrip(){
+    const history=useHistory();
     const [token, setToken]=useState()
     const [form, setForm]=useState({
         name: "",
@@ -37,7 +37,7 @@ export default function Adm_CreateTrip(){
         description: "",
         durationInDays: ""
     })
-    const history=useHistory();
+    
 
     useEffect(()=>{
         setToken(localStorage.getItem('token'))
@@ -69,7 +69,7 @@ export default function Adm_CreateTrip(){
             .then(()=>{
                 alert("Viagem criada")
             })
-            .catch((error)=>{
+            .catch(()=>{
                 alert('Complete os campos corretamente')     
             });  
             

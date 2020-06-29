@@ -24,15 +24,7 @@ export default function Adm_Login(){
 	const [email, setEmail]=useState()
 	const [password, setPassword]=useState()	
 	const history=useHistory();
-
-	const onClickShowSignUp=(()=>{
-		setShowSignUp(true)
-	})
-
-	const onClickComebackToLogin=(()=>{
-		setShowSignUp(false)
-	})
-
+	
 	const onClickNewSignUp=((event)=>{
 		event.preventDefault();	
 		const body={
@@ -73,6 +65,15 @@ export default function Adm_Login(){
 		history.push('trips/list')
 	})
 	
+	
+	const onClickShowSignUp=(()=>{
+		setShowSignUp(true)
+	})
+
+	const onClickComebackToLogin=(()=>{
+		setShowSignUp(false)
+	})
+
 	const onChangeInputEmail=((event)=>{
 		setEmail(event.target.value)	
 	})
@@ -84,42 +85,40 @@ export default function Adm_Login(){
     return(
 		<ContainerRoot>
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-        <Forms>			
-          	<label>Email:</label> 
-			  <input 
-			  value={email} 
-			  type="email"
-			  name="email" 
-			  pattern="{5,}"
-			  title="Digite no mínimo 5 caracteres"
-			  onChange={onChangeInputEmail}
-			  required
-			  />
-          	<label>Senha:</label>
-			  <input 
-			  value={password} 
-			  type="password" 
-			  name="password" 
-			  pattern="{6,}"
-			  title="Sua senha deve ter no mínimo 6 caracteres"			 
-			  onChange={onChangeInputPassword}
-			  required
-			  />
-          	{showSignUp?
-			  	<> 
-          	  		<label>Confirme a senha:</label>
-          	  		<input type="number"/>  
-          	  		<button onClick={onClickNewSignUp} class="btn waves-effect waves-light" type="submit" name="action">
-    					Cadastrar</button>  
-			  		<button onClick={onClickComebackToLogin}> Voltar ao login! </button> 
-          		</> : 
-          		<>	
-				  	<button onClick={onClickLogin} class="btn waves-effect waves-light" type="submit" name="action">
-    					entrar</button> 				  
-			  		<button onClick={onClickShowSignUp}>Criar um novo cadastro!</button>          	  		
-          		</>
-            }            
-		</Forms>
+        	<Forms>			
+        	  	<label>Email:</label> 
+				  <input 
+				  value={email} 
+				  type="email"
+				  name="email" 
+				  pattern="{5,}"
+				  title="Digite no mínimo 5 caracteres"
+				  onChange={onChangeInputEmail}
+				  required
+				  />
+        	  	<label>Senha:</label>
+				  <input 
+				  value={password} 
+				  type="password" 
+				  name="password" 
+				  pattern="{6,}"
+				  title="Sua senha deve ter no mínimo 6 caracteres"			 
+				  onChange={onChangeInputPassword}
+				  required
+				  />
+        	  	{showSignUp?
+				  	(<><label>Confirme a senha:</label>
+        	  	  		<input type="number"/>  
+        	  	  		<button onClick={onClickNewSignUp} class="btn waves-effect waves-light" type="submit" name="action">
+    						Cadastrar</button>  
+				  		<button onClick={onClickComebackToLogin}> Voltar ao login! </button> 
+					</>) : 
+        	  		(<><button onClick={onClickLogin} class="btn waves-effect waves-light" type="submit" name="action">
+    						entrar</button> 				  
+				  		<button onClick={onClickShowSignUp}>Criar um novo cadastro!</button>          	  		
+        	  		</>)
+        	    }            
+			</Forms>
 		</ContainerRoot>
     )
 }

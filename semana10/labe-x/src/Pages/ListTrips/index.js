@@ -6,7 +6,6 @@ import TripDetails from '../TripDetails/index.js'
 import { ContainerRoot } from '../Adm_CreateTrip'
 import 'materialize-css/dist/css/materialize.min.css'
 
-
 const GridOfTrips=styled.div`
     display: flex;
     flex-direction: row;
@@ -82,8 +81,7 @@ export default function ListTrips(){
             {showsTripDetailsPage ?
                  <TripDetails id={idSelectedTrip} /> : <>          
                     <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/> 
-                <GridOfTrips>
-                    
+                <GridOfTrips>                    
                     {listOfTrips} 
                 </GridOfTrips>   
                 </> 

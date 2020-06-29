@@ -40,10 +40,8 @@ const Head = styled.div`
         height: 5vh;
         button{
             height:5vh;
-            margin: 10px;
-            
-        }
-        
+            margin: 10px;           
+        }       
     }
 `
 export default function Header(){   
@@ -69,17 +67,17 @@ export default function Header(){
 
     return (
         <Head> 
-            <img src={logo}/>           
+            <img src={logo} alt="logo"/>           
             <a href="http://localhost:3000/">Home</a>
             <a href="http://localhost:3000/trips/list">Viagens</a>
             <p>
-                {login? <>
-                <a href="http://localhost:3000/trips/create">Criar viagem</a>
-                <span><span>Logado!</span>
-                <button onClick={onClickLogout} class="waves-effect waves-light btn-small red">Sair!</button>
-                </span>
-                </> :
-                <><a href="http://localhost:3000/login">Login</a></>}
+                {login?(<><a href="http://localhost:3000/trips/create">Criar viagem</a>
+                    <span>
+                        <span>Logado!</span>
+                        <button onClick={onClickLogout} class="waves-effect waves-light btn-small red">Sair!</button>
+                    </span></>)
+                :
+                (<><a href="http://localhost:3000/login">Login</a></>)}
             </p>
         </Head>
     );

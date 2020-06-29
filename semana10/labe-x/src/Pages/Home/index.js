@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import 'materialize-css/dist/css/materialize.min.css'
+
 const Div=styled.div`
     display: flex;
     justify-content: center;

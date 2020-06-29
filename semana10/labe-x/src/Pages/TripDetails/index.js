@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react'
 import {useHistory} from 'react-router'
 import api from '../../Service/api.js'
 import styled from 'styled-components'
+import 'materialize-css/dist/css/materialize.min.css'
 
 const ContainerRoot=styled.div`
     display: flex;
@@ -69,20 +70,17 @@ export default function TripDetails(){
             alert('Entre com o login e senha para acessar mais detalhes da viagem')
             history.push('/login')
         }
-
     }, [token]);
 
+    
     const listOfCandidates=candidates.map((candidate)=>{
-        return(
-            <Candidate>
-                <h3>{candidate.name}</h3>      
+        return(            
+            <Candidate >
+                <h3 >{candidate.name}</h3>      
                 <p>{candidate.age} anos, {candidate.profession}</p>
                 <p>{candidate.country}</p>
-                <p>{candidate.applicationText}
-                    <button>APROVADO</button>
-                    <button>AINDA NÃO</button>
-                </p>
-            </Candidate>
+                <p>{candidate.applicationText}</p>                
+            </Candidate>            
         )
     })
 
