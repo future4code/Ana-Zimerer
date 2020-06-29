@@ -1,18 +1,26 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import logo from '../../Imgs/logo.PNG'
 
 const Head = styled.div`
-    width: 98%;
-    height: 10vh;
+    width: 99.5%;
+    height: 20vh;
     border: 1px solid black;
     margin-top:5px;
+    margin-left: 2.5px;
     background-color: #03A696;    
     font-weight: bold;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center; 
+    img{
+        margin-left: 50px;
+        margin-top: 0;
+        width: 120px;
+        height: 120px;
+    }
     a{       
-        margin: 5px;
+        margin: 15px;
         text-decoration: none;
         color: white;
         :hover{
@@ -20,7 +28,22 @@ const Head = styled.div`
         }
     }
     p{
+        display: flex;
+        flex-direction: row;
+    }
+    span{
+        display:flex;
+        flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
+        width: 700px;
+        height: 5vh;
+        button{
+            height:5vh;
+            margin: 10px;
+            
+        }
+        
     }
 `
 export default function Header(){   
@@ -45,14 +68,18 @@ export default function Header(){
     }
 
     return (
-        <Head>            
+        <Head> 
+            <img src={logo}/>           
             <a href="http://localhost:3000/">Home</a>
             <a href="http://localhost:3000/trips/list">Viagens</a>
             <p>
                 {login? <>
                 <a href="http://localhost:3000/trips/create">Criar viagem</a>
-                <label>Logado!</label><button onClick={onClickLogout}>Sair!</button></> :
-                <><a href="http://localhost:3000/login" >Login</a></>}
+                <span><span>Logado!</span>
+                <button onClick={onClickLogout} class="waves-effect waves-light btn-small red">Sair!</button>
+                </span>
+                </> :
+                <><a href="http://localhost:3000/login">Login</a></>}
             </p>
         </Head>
     );

@@ -11,11 +11,20 @@ export const Forms =styled.form`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 20vw;
+	width: 40vw;
 	input,textarea, button{
-		margin: 2.5px;
+		margin: 0.5px;
 		width: 15vw;
 	}
+    h4, h5{
+        margin: 10px;
+    }
+    button{
+        width: 20vw;
+    }
+    label{
+        font-size: 1em;
+    }
 `
 export default function Candidature(){
     const [form, setForm]=useState({
@@ -26,7 +35,7 @@ export default function Candidature(){
         country: '',
     })
 
-    const onClickApplyToTrip= ((event)=>{
+const onClickApplyToTrip= ((event)=>{
         event.preventDefault();
         const id = localStorage.getItem("idOfTrip")
         console.log('id sem '+ id)
@@ -40,9 +49,9 @@ export default function Candidature(){
         api
             .post(`/trips/${id}/apply`, body)
             .then(()=>{
-                alert('se candidatou')
+                alert(`Você se candidatou á ${localStorage.getItem("nameOfTrip")} com sucesso!`)
             }).catch((error)=>{
-                alert(error)
+                alert('Cadastro inválido')
         })   
     })
     
@@ -54,17 +63,43 @@ export default function Candidature(){
     return(
         <ContainerRoot>
             <Forms>
+                <h4>Ficha de cadastro</h4>
+                <h5>Viagem: {localStorage.getItem("nameOfTrip")}</h5>
                 <label>Nome: </label>
-                <input type="text" name="name" value={form.name} onChange={onChangeInputsForm}/>
+                <input 
+                    type="text" 
+                    name="name" 
+                    value={form.name} 
+                    pattern="[A-Za-z ]{3,}"
+			        title="Digite um nome válido"
+                    onChange={onChangeInputsForm}
+                    required/>
                 <label>Idade: </label>
-                <input type="number" name="age" value={form.age} onChange={onChangeInputsForm}/>
+                <input 
+                    type="number" 
+                    name="age" 
+                    value={form.age} 
+                    min="18"
+                    max="100"
+                    title="Digite uma idade entre 18 e 100 anos"
+                    onChange={onChangeInputsForm}
+                    required
+                />
                 <label>Profissão:</label>
-                <input type="text" name="profession" value={form.profession} onChange={onChangeInputsForm}/>
+                <input 
+                    type="text" 
+                    name="profession" 
+                    value={form.profession} 
+                    pattern="{10,}"
+                    title="Digite uma profissão com no mínimo 10 letras"
+                    onChange={onChangeInputsForm}
+                    required
+                />
                 <label>Pais:</label>
                 <input type="text" name="country" value={form.country} onChange={onChangeInputsForm}/>                
-                <label>Porque você merece essa vaga?</label>
+                <label>Porque sou um bom candidato(a)?</label>
                 <input type="text" name="text" value={form.text} onChange={onChangeInputsForm}/>  
-                <button onClick={onClickApplyToTrip}>Quero concorrer á vaga!</button>
+                <button onClick={onClickApplyToTrip} class="btn-large waves-effect waves-light orange accent-3 " >Quero concorrer á vaga!</button>
             </Forms>
         </ContainerRoot>
     );

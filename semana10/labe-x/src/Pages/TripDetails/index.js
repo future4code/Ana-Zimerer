@@ -24,12 +24,19 @@ const Candidate=styled.div`
     border-radius: 5px;
     width: 30vw;
     h3{
-        margin: 5px;        
+        margin: 5px; 
+        font-size: 1.2em; 
+        font-weight: bold;      
     }
-    p{
+    p{  
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        width:10vw;
         padding: 0.5px;
         margin: 5px;
-        button{            
+        button{   
+            vertical-align:center;         
             margin: 5px;
             height: 3vh;            
         }
@@ -87,7 +94,7 @@ export default function TripDetails(){
                     <p>{tripDetails.date}</p>
                     <p>Duração: {tripDetails.durationInDays} dias</p>
                 </p>
-                <img alt="imagem da viagem" width="200px" height="200px"src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
+                <img alt="imagem da viagem" width="300px" height="300px" src="https://img.olhardigital.com.br/uploads/acervo_imagens/2020/01/r16x9/20200107060943_1200_675_-_sistema_solar.jpg" />
             </div> 
             <div>
                 <hr />  

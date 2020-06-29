@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import 'materialize-css/dist/css/materialize.min.css'
 const Div=styled.div`
     display: flex;
     justify-content: center;
@@ -25,10 +26,10 @@ export default function Home(){
     return(
         <Div>
             <Link to={"/trips/list"}>
-                <button onCLick={onCLickUserAccess}>Explorar viagens!</button>
+                <button onCLick={onCLickUserAccess} class="btn waves-effect waves-light orange accent-3 " >Explorar viagens!</button>
             </Link>
             <Link to={"/login"}>
-                <button onClick={onClickAdmAccess}>Acessar área restrita</button>
+                <button onClick={onClickAdmAccess} class="btn waves-effect waves-light red">Acessar área restrita</button>
             </Link>
         </Div>
     )

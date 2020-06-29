@@ -13,14 +13,30 @@ export const Forms =styled.form`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 20vw;
+	width: 30vw;
 	input,textarea, button{
-		margin: 2.5px;
-		width: 15vw;
+		margin: 0.5px;
+		width: 10vw;
 	}
+    h4, h5{
+        margin: 25px;
+    }
+    button{
+        width: 20vw;
+    }
+    label{
+        font-size: 1em;
+    }
 `
 export default function Adm_CreateTrip(){
     const [token, setToken]=useState()
+    const [form, setForm]=useState({
+        name: "",
+        planet: "",
+        date: "",
+        description: "",
+        durationInDays: ""
+    })
     const history=useHistory();
 
     useEffect(()=>{
@@ -33,6 +49,7 @@ export default function Adm_CreateTrip(){
     }, [token]);
 
     const onClickCreateTrip = (event) =>{
+    
         event.preventDefault();
         const axiosConfig={
             headers:{
@@ -41,36 +58,71 @@ export default function Adm_CreateTrip(){
         }
 
         const body={
-            name: "Ano novo em Mercúrio",
-            planet: "Mercúrio",
-            date: "31/12/2019",
-            description: "Venha passar a virada pertinho do Sol!",
-            durationInDays: 7
+            name: "Rave em Urano",
+            planet: "Urano",
+            date: "22/07/2022",
+            description: "Djs convidados de toda a galáxia esperam por você nessa super viagem!",
+            durationInDays: 552
         }
         api
             .post('trips', body, axiosConfig)
             .then(()=>{
+                alert("Viagem criada")
             })
             .catch((error)=>{
-                alert('Complete os campos corretamente')
-                history.push('/login')        
+                alert('Complete os campos corretamente')     
             });  
             
     }
 
+    const onChangeInputsForm=((event)=>{
+        const {name, value}=event.target
+        setForm({...form, [name]:value});
+    })
+
     return(
         <ContainerRoot>
             <Forms>
+                <h4>Cadastrar nova viagem</h4>
                 <label>Nome da viagem</label>
-                <input type="text"/>
+                <input 
+                    type="text"
+                    name="name" 
+                    value={form.name} 
+                    pattern=""
+			        title="Digite um nome válido"
+                    onChange={onChangeInputsForm}
+                    required/>
                 <label>Planeta:</label>
-                <input type="text"/>
+                <input 
+                    type="text"
+                    name="planet" 
+                    value={form.planet} 
+                    pattern=""
+			        title="Digite um planeta valido"
+                    onChange={onChangeInputsForm}
+                    required    
+                />
                 <label>Data:</label>
-                <input type="date" />
-                <input placeholder="upload de imagem"/>
+                <input 
+                    type="text" 
+                    name="date" 
+                    placeholder="dd/mm/aaaa"
+                    title="Digite uma data no formato XX/XX/XXXX"
+                    value="22/07/2022"
+                    />
                 <label>Descrição:</label>
-                <textarea />
-                <button onClick={onClickCreateTrip}>CRIAR VIAGEM!</button>
+                <input 
+                    type="text"
+                    name="description" 
+                    value={form.description} 
+                    pattern="[A-Za-z ]{30,}"
+                    placeholder={'Digite no mínimo 30 caracteres'}
+                    title="Digite no mínimo 30 caracteres"
+                    onChange={onChangeInputsForm}
+                    required
+                />
+                <button onClick={onClickCreateTrip} class="btn-large waves-effect waves-light orange accent-3 ">CRIAR VIAGEM!</button>
             </Forms>
         </ContainerRoot>
     );

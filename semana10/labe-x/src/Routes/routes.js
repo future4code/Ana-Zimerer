@@ -17,7 +17,7 @@ export default function Routes() {
               <Route exact path="/trips/details:id" component={TripDetails}/>  
               <Route exact path="/login" component={LoginAdm}/>   
               <Route exact path="/trips/create" component={CreateTrip}/>  
-              <Route exact path="/trips/candidature:id" component={Candidature}/>  
+              <Route exact path="/trips/candidature:id:name" component={Candidature}/>  
             </Switch>
         </BrowserRouter>
     );

@@ -3,6 +3,9 @@ import {useHistory} from 'react-router-dom'
 import api from '../../Service/api'
 import styled from 'styled-components'
 import TripDetails from '../TripDetails/index.js'
+import { ContainerRoot } from '../Adm_CreateTrip'
+import 'materialize-css/dist/css/materialize.min.css'
+
 
 const GridOfTrips=styled.div`
     display: flex;
@@ -14,13 +17,15 @@ const GridOfTrips=styled.div`
         height: 50%;
         flex-direction: column;
         img{
-            width: 80%;
-            height:80%;
+            width: 60%;
+            height:60%;
         }
-        button{
+        button:first-of-type{
             position: relative;
-            margin-left: -52vh;
-
+            margin-left: -50vh;
+        }
+        button:last-of-type{
+            position: relative;
         }
     }
 `
@@ -43,10 +48,6 @@ export default function ListTrips(){
             });
     }, []);
 
-    if ((search !== "") &&(trips.name.indexOf( search ) === -1)){
-        return null;
-    }
-
     const onChangeInputSearch = ((event) =>{
         setSearch(event.target.value)       
     })
@@ -59,32 +60,34 @@ export default function ListTrips(){
         localStorage.setItem('idOfTrip', (id)); 
     })
 
-    const goToCandidaturePage = ((id)=>{
-        history.push(`/trips/candidature${id}`)    
+    const goToCandidaturePage = ((id, name)=>{
+        history.push(`/trips/candidature${id}${name}`)    
         localStorage.setItem('idOfTrip', (id));
+        localStorage.setItem('nameOfTrip', (name))
     })
 
     const listOfTrips = trips.map((trip)=>{
         return(
             <div>
                 <p>{trip.name}</p>
-                <img alt={`Imagem da viagem ${trip.name}`} src="https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo"/>
-                <button onClick={() =>{onClickSeeTripDetails(trip.id, trip)}}>Visualizar viagem</button>
-                <button onClick={() =>{goToCandidaturePage(trip.id)}}>Me candidatar!</button>
+                <img alt={`Imagem da viagem ${trip.name}`} src="https://img.olhardigital.com.br/uploads/acervo_imagens/2020/01/r16x9/20200107060943_1200_675_-_sistema_solar.jpg"/>
+                <button onClick={() =>{onClickSeeTripDetails(trip.id, trip)}} class="waves-effect waves-light btn-small orange accent-3">Visualizar viagem</button>
+                <button onClick={() =>{goToCandidaturePage(trip.id, trip.name)}} class="waves-effect waves-light btn-small red">Me candidatar!</button>
             </div>
         )
     })
 
     return(
-        <div>
+        <ContainerRoot>
             {showsTripDetailsPage ?
                  <TripDetails id={idSelectedTrip} /> : <>          
-                <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/>        
+                    <input value={search} onChange={onChangeInputSearch} placeholder="Pesquise uma viagem"/> 
                 <GridOfTrips>
+                    
                     {listOfTrips} 
                 </GridOfTrips>   
                 </> 
             } 
-        </div>  
+        </ContainerRoot>  
     );
 } 
