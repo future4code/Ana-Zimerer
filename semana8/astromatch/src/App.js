@@ -51,7 +51,6 @@ function App() {
   	return (
     	<ContainerRoot>			
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-
 			{/*Ternário pra mudança de página*/}
 			{changePage? <MatchsPage />: 
     	    	<Container>				
