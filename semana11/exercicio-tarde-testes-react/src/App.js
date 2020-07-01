@@ -5,6 +5,7 @@ import { Post } from "./components/Post";
 const App = () => {
   const [postsList, setPostsList] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [countOfPosts, setCountOfPosts] = useState(0)
 
   const onChangeInput = event => {
     setInputValue(event.target.value);
@@ -19,8 +20,9 @@ const App = () => {
     };
 
     const newPostsList = [newPost, ...postsList];
-
     setPostsList(newPostsList);
+    setInputValue("")
+    setCountOfPosts(countOfPosts+1)
   };
 
   const deletePost = postId => {
@@ -28,8 +30,8 @@ const App = () => {
     const newPostsList = postsList.filter(post => {
       return postId !== post.id;
     });
-
-    setPostsList(newPostsList);
+	setPostsList(newPostsList);
+	setCountOfPosts(countOfPosts-1)
   };
 
   const toggleLike = postId => {
