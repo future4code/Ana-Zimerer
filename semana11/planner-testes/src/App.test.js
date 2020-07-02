@@ -7,3 +7,7 @@ test('renders learn react link', () => {
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('verifica se as tarefas estão sendo encontradas e renderizadas na tela', () =>{
+	
+})
