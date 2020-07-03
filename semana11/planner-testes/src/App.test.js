@@ -14,8 +14,7 @@ test('verifica se as tarefas estão sendo encontradas e renderizadas na tela', (
           "id": "sYLgZCjyXTwr3G9lqNIP"
         } 
       ]
-	})
-	
+	})	
 	const utils= render(<App/>)
 	const task=utils.getByText('tarefa teste')
 	expect(task).toBeInTheDocument()		

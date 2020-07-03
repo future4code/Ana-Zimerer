@@ -1,13 +1,18 @@
 import React, {useState, useEffect} from 'react'
 import './App.css'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const ContainerDay=styled.div`
+	border: 1px solid black;
+	height: 100%;
+	width: 100%;
+	background-color: pink;
+`
 
 function App() {
 	const baseUrl="https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-anapaula"
 	const [tasks, setTasks]=useState([])
-	const [countAddTask, setCountAddTask]=useState()
-	const [inputNewTask, setInputNewTask]=useState()
-	const [selectDayOfWeek, setSelectDayOfWeek]=useState()
 	const [form, setForm]=useState({
 			task:"",
 			day:""
@@ -25,7 +30,7 @@ function App() {
 
 	useEffect(()=>{		
 		renderAllTasks();		
-	}, [setCountAddTask])
+	}, [])
 
 	const renderAllTasks = ()=>{
 		axios.get(baseUrl).then((response)=>{
@@ -112,46 +117,46 @@ function App() {
   	              <option value="sunday">Domingo</option>
   	          </select> 
   	          <button onClick={onClickCreateTask}>ADICIONAR</button>
-  	      </div>
+		</div>
 
   	  	<section className= "container-dias-da-semana">
-  	  	    <div>
+			<ContainerDay>
 				Segunda
 				{ordenateList.monday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
-  	  	    <div>
+			</ContainerDay>
+			<ContainerDay>
 				Terça
 				{ordenateList.tuesday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
-  	  	    <div>
+			</ContainerDay>
+			<ContainerDay>
 				Quarta
 				{ordenateList.wednesday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
-  	  	    <div>
+			</ContainerDay>
+			<ContainerDay>
 				Quinta
 				{ordenateList.thursday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
-  	  	    <div>
+			</ContainerDay>
+			<ContainerDay>
 				Sexta
 				{ordenateList.friday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
-  	  	    <div>
+			</ContainerDay>
+			<ContainerDay>
 				Sábado
 				{ordenateList.saturday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
-  	  	    <div>
+			</ContainerDay>
+			<ContainerDay>
 				Domingo
 				{ordenateList.sunday.map((task)=>{
 					return <p>{task.text} <button onClick={() => {onClickDeleteTasks(task.id)}}>X</button></p>})}
-			</div>
+			</ContainerDay>
   	  	</section>
-  	  </div>
+		</div>
   	);
 }
 
