@@ -9,7 +9,6 @@ const ContainerDay=styled.div`
 	width: 100%;
 	background-color: pink;
 `
-
 function App() {
 	const baseUrl="https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-anapaula"
 	const [tasks, setTasks]=useState([])
@@ -35,10 +34,9 @@ function App() {
 	const renderAllTasks = ()=>{
 		axios.get(baseUrl).then((response)=>{
 			setTasks(response.data)
-			alert('buscou')
 			setForm({task:'', day: ''})
 		}).catch(()=>{
-			alert('não buscou as tasks')
+			alert('As tarefas não foram renderizadas corretamente')
 		})
 	}
 	
@@ -48,10 +46,9 @@ function App() {
 			day: form.day
 		 }
 		axios.post(baseUrl, body).then(()=>{
-			alert('task criada')
 			renderAllTasks();
 		}).catch(()=>{
-			alert('task não criada')
+			alert('A tarefa não foi criada')
 		})
 		
 	}	 
@@ -63,7 +60,7 @@ function App() {
 
 	const onClickDeleteTasks=(id)=>{		
 		axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-anapaula/${id}`).then(()=>{
-			alert('deletou')
+			alert('Tarefa excluida')
 			renderAllTasks();
 		}).catch(()=>{
 			alert('não deletou')

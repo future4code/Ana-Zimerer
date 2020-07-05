@@ -4,21 +4,28 @@ import App from "./App";
 import axios from 'axios'
 import userEvent from '@testing-library/user-event'
 
+test('verifica se o input de adicionar tarefa está na tela', ()=>{
+	const { getByPlaceholderText}= render(<App/>)
+    const input=getByPlaceholderText('Digite uma tarefa')
+	expect(input).toBeInTheDocument()
+})
 
-test('verifica se as tarefas estão sendo encontradas e renderizadas na tela', () =>{
-    axios.get=jest.fn().mockResolvedValue({
-      data: [
-        {
-          "day": 'terça' ,
-          "texto": "tarefa teste",
-          "id": "sYLgZCjyXTwr3G9lqNIP"
-        } 
-      ]
-	})	
-	const utils= render(<App/>)
-	const task=utils.getByText('tarefa teste')
-	expect(task).toBeInTheDocument()		
-	expect(axios.get).toHaveBeenCalled()
+test('verifica se o botão adicionar tarefa está na tela', ()=>{
+	const { getByText}= render(<App/>)
+    const button=getByText(/ADICIONAR/i)
+	expect(button).toBeInTheDocument()
+})
+
+test('vefica se as tarefas estão sendo criadas e renderizadas', async () =>{
+	const utils= render(<App />)
+	const input=utils.getByPlaceholderText('Digite uma tarefa')
+	userEvent.type(input, "teste")
+	expect(input).toHaveValue("teste")
+
+	const button=utils.getByText(/ADICIONAR/i)
+	userEvent.click(button)
+	const tarefa= utils.getByText("teste")
+	await expect(tarefa).toBeInTheDocument()
 })
 
 test('Verifica se uma nova tarefa é criada corretamente', async () => {
@@ -28,8 +35,8 @@ test('Verifica se uma nova tarefa é criada corretamente', async () => {
 			day: "segunda",
 			texto: "tarefa teste",
 		  }]
-	  })
-
+	})
+	
 	axios.post = jest.fn().mockResolvedValue()
 	const { getByPlaceholderText, getByText }= render(<App/>)
 	const input=getByPlaceholderText('Digite uma tarefa')
@@ -40,7 +47,7 @@ test('Verifica se uma nova tarefa é criada corretamente', async () => {
 	expect(axios.post).toHaveBeenCalledWith(baseUrl, {
 	  day: 'segunda',
 	  texto: 'tarefa teste',
-    })
+	})
 	await wait(() => expect(axios.get).toHaveBeenCalledTimes(2))
-    await wait(() => expect(input).toHaveValue(''))
-})	
+	await wait(() => expect(input).toHaveValue(''))
+})
