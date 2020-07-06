@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './SecaoComentario.css'
-import { NovoComentario } from '../NovoComentario/NovoComentario'
+//import { NovoComentario } from '../NovoComentario/NovoComentario'
 
 export class SecaoComentario extends Component {
 	state = {
@@ -13,11 +13,9 @@ export class SecaoComentario extends Component {
 	}
 	onClickComent=(event)=>{		
 		return alert(this.state.comentario)
-
 	}
-
-
-	render() {
+   render() {
+	   
 		return <div className={'comment-container'}>
 			<input
 				className={'input-comentario'}
@@ -26,11 +24,10 @@ export class SecaoComentario extends Component {
 				onChange={this.onChangeComentario}
 			/>
 
-		<button onClick={this.onClickComent}>Enviar</button>	
+		<button onClick={this.onClickComent} >Enviar</button>	
 		
-		<NovoComentario
-		 labelComentario={this.state.comentario}/>
 		</div>
+		
             
         
 

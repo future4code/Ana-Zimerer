@@ -58,7 +58,6 @@ class App extends React.Component {
 	onChangeInputPlaylist =(event)=>{
 		this.setState({name: event.target.value})
 	}
-
 	onClickSavePlaylist = () =>{		
 		const axiosConfig={
 			headers: {

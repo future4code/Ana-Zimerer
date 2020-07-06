@@ -15,8 +15,7 @@ const P = styled.p`
     margin-left:3px;
     div{
         display: flex;       
-    }
-   
+    }   
 `
 const Span = styled.span`
     width: 100%;
