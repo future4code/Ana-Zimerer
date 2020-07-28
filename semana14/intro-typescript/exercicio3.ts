@@ -2,8 +2,8 @@ type infosDosPosts={
     autor: 'string',
     texto: 'string'
 }
-
-const posts: infosDosPosts = [
+    
+const posts: infosDosPosts[]=[
     {
       autor: "Alvo Dumbledore",
       texto: "Não vale a pena viver sonhando e se esquecer de viver"
@@ -24,6 +24,10 @@ const posts: infosDosPosts = [
       autor: "Lord Voldemort",
       texto: "Avada Kedavra!"
     }
-  ]
+]
 
-console.log(posts)
+const buscaPorAutor = (posts: infosDosPosts[],  autorDigitado:string): infosDosPosts[]=>{
+  return posts.filter((post: post) =>{
+    return post.autor=== autorDigitado;
+  })
+}

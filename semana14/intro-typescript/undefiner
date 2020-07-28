@@ -1,0 +1,56 @@
+//1)lista de usuarios que tem no json:
+
+import * as fs from 'fs
+
+const fileData: any = fs.readFileSync("./users.json").toString // read é um método que le arq
+console.log(fileData) 
+//mostra um buffer com exadecimais, para converter:
+//add .toString nessa linha 3
+//agora dá certo 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//2) requisição com parametros
+//recebe um id pelo terminal e deletar o usuario correspondente
+//cria um novo arquivo touch deleteUser.ts
+
+// a)copia a primeira parte pra mostrar no terminal 
+import * as fs from 'fs
+const fileData: any = fs.readFileSync("./users.json").toString 
+
+//b)transformando em objeto
+let users; 
+try{
+    users= JSON.parse(fileData) //transformando em objeto
+}catch (error){
+    users=[] //caso de erro, coloca isso pra não ficar undefined e atrapalhar map e filter
+    console.log("Erro ao ler a base de dados: " + error)
+}
+
+console.log(
+    process.argv //recebe parametros do terminal
+) 
+
+//vai lá no package-scripts- e escreve "delete-user" "tsc && node build/deleteUser.js" | o process.argv recebe parametros do terminal
+// no terminal: npm run delete-user
+
+const id: number = Number(process.argv[2]) //0 é node a 1 é a local do arquivo, a partir do 2 são valores reais| 
+//sem o Number antes do process, deu um erro falando que estava recendo string, por isso mudamos o process pra number 
+
+//com cada elemento do array, quero comparar se o id do terminal é igual ao do array user, se for, deletar.
+users.forEach((element: any, i: number, array:any)=>{ //cada elemento| indice| array inteiro 
+ if(element.id===id){ //o ide do prompt é igual ao do array?
+    array.splice(i, 1)  
+ }
+});
+
+try{
+    const updateUsers: string= JSON.stringify(users, null, 5)//tranformando o obj 'user'de volta em string || null é o replace pra fazer alterações nos dados || o 5 é a identação, qtos espaços até add a próxima letra
+    fs.writeFileSync("./users.json", updatedUsers) //caminho | o que você quer add 
+}catch(error){
+    console.log("erro ao atualizar a base")
+}
+/// com esse ultimo try/catch escrevemos na base de dados 
+
+
+npm run deleteUser.js 1 //isso aqui (o num 1) passa o id que é pra ele conferir 
+
