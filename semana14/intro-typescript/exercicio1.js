@@ -26,4 +26,3 @@ var CORESPRIMARIAS;
 var anamaria = {
     corFavorita: CORESPRIMARIAS.AMARELO
 };
-console.log(anamaria.corFavorita);

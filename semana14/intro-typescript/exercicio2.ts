@@ -1,31 +1,31 @@
 
 //passando de JS para TS:
-function obterEstatisticas(numeros : number[]){
-
-    const numerosOrdenados: number[] = numeros.sort(
-        (a : number, b: number) => a - b
-    )
-
-    let soma: number = 0
-
-    for (let num of numeros) {
-        soma += num
-    }
-
-    type tiposDosNumeros={
-        maior: number,
-        menor: number,
-        media: number
-    }
-    
-    const estatisticas: tiposDosNumeros= {
-        maior: numerosOrdenados[numeros.length - 1],
-        menor: numerosOrdenados[0],
-        media: soma / numeros.length
-    }
-    return estatisticas
-}
-console.log(obterEstatisticas([1,2,3]))
+//function obterEstatisticas(numeros : number[]){
+//
+//    const numerosOrdenados: number[] = numeros.sort(
+//        (a : number, b: number) => a - b
+//    )
+//
+//    let soma: number = 0
+//
+//    for (let num of numeros) {
+//        soma += num
+//    }
+//
+//    type tiposDosNumeros={
+//        maior: number,
+//        menor: number,
+//        media: number
+//    }
+//    
+//    const estatisticas: tiposDosNumeros= {
+//        maior: numerosOrdenados[numeros.length - 1],
+//        menor: numerosOrdenados[0],
+//        media: soma / numeros.length
+//    }
+//    return estatisticas
+//}
+//console.log(obterEstatisticas([1,2,3]))
 
 //a) Quais as entradas e saídas dessa função?
 //Com a entrada [1,2,3] a saída é { maior: 3, menor: 1, media: 2 }
