@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const operation = (process.argv[2]);
 const firstNumber = Number(process.argv[3]);
 const secondNumber = Number(process.argv[4]);

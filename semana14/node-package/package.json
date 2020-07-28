@@ -6,7 +6,8 @@
   "scripts": {
     "get-name-and-age": "tsc && node build/index.js",
     "math-operation": "tsc && node build/exercicio2.js",
-    "start": "ts-node ./src/index.ts",
+    "new-tasks": "tsc && node build/exercicio3.js",
+    "start": "ts-node ./src/tarefas.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
