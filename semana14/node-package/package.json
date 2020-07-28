@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "get-name-and-age": "tsc && node build/index.js",
+    "math-operation": "tsc && node build/exercicio2.js",
     "start": "ts-node ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
