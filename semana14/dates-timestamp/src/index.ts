@@ -39,7 +39,7 @@ function showsEvents(events: event[]): void{
     })
 }
 
-showsEvents(AllEvents)
+//showsEvents(AllEvents)
 //b) moment.locale('eng-gb')
 
-
+//function createEvent(name: string, description: string, )
