@@ -42,4 +42,28 @@ function showsEvents(events: event[]): void{
 //showsEvents(AllEvents)
 //b) moment.locale('eng-gb')
 
-//function createEvent(name: string, description: string, )
+function createEvent(
+    name: string, 
+    description: string, 
+    initialDate: moment.Moment, 
+    finishDate: moment.Moment
+): void{
+    
+    const diffInitialDateAndNow= initialDate.diff(moment(), "seconds");
+    const diffFinishDateAndNow= finishDate.diff(moment(), "seconds");
+
+    if (!name || !description || !initialDate || !finishDate){
+        console.log('Nâo foi possível criar um novo evento. Erro: ausência de dados')
+    }else if(diffFinishDateAndNow <0 && diffInitialDateAndNow<0 ){
+        console.log('A data inicial ou final não é válida')
+    }else{
+        AllEvents.push({name, description, initialDate, finishDate})
+    }
+}
+//createEvent(
+//'Observação de anuros', 
+//'Atividade no laguinho do Instituto de biologia', 
+//moment("30 de Agosto de 2020 07:00", 'DD [de] MMM [de] YYYY HH:mm'),
+//moment("30 de Agosto de 2020 11:00", 'DD [de] MMM [de] YYYY HH:mm'))
+//
+//showsEvents(AllEvents)
