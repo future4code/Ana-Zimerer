@@ -15,6 +15,7 @@ export function writeToDatabase(data: any): void {
   try {
     const dataAsString: string = JSON.stringify(data, null, 2)
     fs.writeFileSync('data.json', dataAsString)
+    readDatabase()
     console.log('Dados salvos')
   } catch (error) {
     console.log("Erro ao salvar os dados: " + error.message)

@@ -1,7 +1,15 @@
+[{
+  "name": "Ana",
+  "cpf": 45466266585,
+  "dateOfBirth": null,
+  "balance": 20000,
+  "statement": []
+},
 {
   "name": "Otavio",
-  "cpf": 11122253,
+  "cpf": 44455566645,
   "dateOfBirth": null,
-  "balance": 0,
+  "balance": 5000,
   "statement": []
 }
+]
