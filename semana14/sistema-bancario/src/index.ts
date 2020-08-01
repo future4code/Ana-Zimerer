@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import moment from 'moment'
 
 export function readDatabase(): any {
   try {
@@ -13,10 +14,27 @@ export function readDatabase(): any {
 export function writeToDatabase(data: any): void {
   try {
     const dataAsString: string = JSON.stringify(data, null, 2)
-    fs.writeFileSync('./data.json', dataAsString)
+    fs.writeFileSync('data.json', dataAsString)
+    console.log('Dados salvos')
   } catch (error) {
     console.log("Erro ao salvar os dados: " + error.message)
   }
 }
 
-// informados nome, CPF e data de nascimento.
+type account= {
+  name: string,
+  cpf: number,
+  dateOfBirth: moment.Moment,
+  balance: number,
+  statement: number[]
+}
+
+const newAccount: account={
+  name: process.argv[2],
+  cpf: Number(process.argv[3]),
+  dateOfBirth: moment(process.argv[4], 'DD/MM/YYYY'),
+  balance: 0,
+  statement: []
+}
+
+writeToDatabase(newAccount)
