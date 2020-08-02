@@ -22,11 +22,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.readDatabase = void 0;
 const fs = __importStar(require("fs"));
 const moment_1 = __importDefault(require("moment"));
 const newNameAccount = process.argv[2];
 const newCpfAccount = Number(process.argv[3]);
 const newDateOfBirthAccount = moment_1.default(process.argv[4], 'DD/MM/YYYY');
+function readDatabase() {
+    try {
+        const fileData = fs.readFileSync('./data.json').toString();
+        return JSON.parse(fileData);
+    }
+    catch (error) {
+        console.log("Erro ao ler a base de dados: " + error.message);
+        return [];
+    }
+}
+exports.readDatabase = readDatabase;
 function checkAdulthood(birth) {
     let now = moment_1.default();
     let ageOfClient = now.diff(birth, "years");
@@ -35,15 +47,28 @@ function checkAdulthood(birth) {
         return true;
     }
     else {
+        console.log('Conta não criada: para se cadastrar é necessário ter mais de 18 anos.');
         return false;
     }
 }
+function checkIfCpfIsValid(cpf) {
+    let fileData = readDatabase();
+    fileData.forEach((account, i, array) => {
+        if (cpf === account.cpf) {
+            console.log('Conta não criada: o cpf informado já foi cadastrado em outra conta. Digite um cpf válido.');
+            return false;
+        }
+        else {
+            return true;
+        }
+    });
+}
 function createAccount(accountName, accountCpf, accountDateOfBirth) {
     const AgeIsValid = checkAdulthood(accountDateOfBirth);
-    if (AgeIsValid) {
+    const cpfIdValid = checkIfCpfIsValid(accountCpf);
+    if (AgeIsValid && cpfIdValid) {
         try {
-            const fileData = fs.readFileSync('./data.json').toString();
-            let data = JSON.parse(fileData);
+            let data = readDatabase();
             data.push({
                 name: accountName,
                 cpf: accountCpf,
@@ -59,9 +84,5 @@ function createAccount(accountName, accountCpf, accountDateOfBirth) {
             console.log('Erro ao tentar criar nova conta');
         }
     }
-    else {
-        console.log('Sua conta não foi criada pois é necessário ter mais de 18 anos');
-    }
 }
 createAccount(newNameAccount, newCpfAccount, newDateOfBirthAccount);
-//checkAdulthood(moment(process.argv[2], 'DD/MM/YYYY'))

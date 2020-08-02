@@ -1,6 +1,10 @@
 import * as fs from 'fs'
 import moment from 'moment'
 
+const newNameAccount: string =  process.argv[2]
+const newCpfAccount: number = Number(process.argv[3])
+const newDateOfBirthAccount= moment(process.argv[4], 'DD/MM/YYYY')
+
 type transactions=[{
   value: number,
   date: moment.Moment,
@@ -15,19 +19,37 @@ type account= {
   statement: transactions
 }
 
-const newNameAccount: string =  process.argv[2]
-const newCpfAccount: number = Number(process.argv[3])
-const newDateOfBirthAccount= moment(process.argv[4], 'DD/MM/YYYY')
+export function readDatabase(): any {
+	try {
+	  const fileData: string = fs.readFileSync('./data.json').toString()
+	  return JSON.parse(fileData)
+	} catch (error) {
+	  console.log("Erro ao ler a base de dados: " + error.message)
+	  return []
+	}
+}
 
 function checkAdulthood(birth: moment.Moment):boolean{
 	let now= moment()
 	let ageOfClient:number= now.diff(birth, "years")
-	console.log(ageOfClient)
 	if (ageOfClient>=18){
 		return true
 	}else{
+		console.log('Conta não criada: para se cadastrar é necessário ter mais de 18 anos.')
 		return false
 	}
+}
+
+function checkIfCpfIsValid(cpf: number):any{
+	let fileData= readDatabase()
+	fileData.forEach((account: any, i: number, array:any ) => {
+		if(cpf=== account.cpf){
+			console.log('Conta não criada: o cpf informado já foi cadastrado em outra conta. Digite um cpf válido.')
+		    return false
+		}else{
+			return true
+		}
+	});
 }
 
 function createAccount(
@@ -36,11 +58,10 @@ function createAccount(
   accountDateOfBirth: moment.Moment
 ): void{
 	const AgeIsValid= checkAdulthood(accountDateOfBirth)
-	if (AgeIsValid){
+	const cpfIdValid= checkIfCpfIsValid(accountCpf)
+	if (AgeIsValid && cpfIdValid){
   		try{		
-			const fileData= fs.readFileSync('./data.json').toString()
-			let data = JSON.parse(fileData)
-
+			let data = readDatabase()
   			data.push({
   			name: accountName,
   			cpf: accountCpf,
@@ -55,8 +76,6 @@ function createAccount(
   		}catch{
 			console.log('Erro ao tentar criar nova conta')
 		}
-	}else{
-		console.log('Sua conta não foi criada pois é necessário ter mais de 18 anos')
 	}
 }
 
