@@ -18,41 +18,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.writeToDatabase = exports.readDatabase = void 0;
 const fs = __importStar(require("fs"));
-const moment_1 = __importDefault(require("moment"));
-function readDatabase() {
+function getAllAccounts() {
     try {
         const fileData = fs.readFileSync('./data.json').toString();
-        return JSON.parse(fileData);
+        console.log(JSON.parse(fileData));
     }
     catch (error) {
         console.log("Erro ao ler a base de dados: " + error.message);
         return [];
     }
 }
-exports.readDatabase = readDatabase;
-function writeToDatabase(data) {
-    try {
-        const dataAsString = JSON.stringify(data, null, 2);
-        fs.writeFileSync('data.json', dataAsString);
-        readDatabase();
-        console.log('Dados salvos');
-    }
-    catch (error) {
-        console.log("Erro ao salvar os dados: " + error.message);
-    }
-}
-exports.writeToDatabase = writeToDatabase;
-const newAccount = {
-    name: process.argv[2],
-    cpf: Number(process.argv[3]),
-    dateOfBirth: moment_1.default(process.argv[4], 'DD/MM/YYYY'),
-    balance: 0,
-    statement: []
-};
-writeToDatabase(newAccount);
+getAllAccounts();

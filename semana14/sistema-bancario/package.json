@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "create-account": "tsc && node build/createAccount.js",
+    "get-all-accounts": "tsc && node build/getAllAccounts.js",
     "get-balance": "tsc && node build/getBalance.js",
+    "add-balance": "tsc && node build/addBalance.js",
     "build": "tsc && node ./build/index.js"
   },
   "author": "",
