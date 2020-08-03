@@ -8,6 +8,7 @@
     "get-all-accounts": "tsc && node build/getAllAccounts.js",
     "get-balance": "tsc && node build/getBalance.js",
     "add-balance": "tsc && node build/addBalance.js",
+    "pay-bill": "tsc && node build/payBill.js",
     "build": "tsc && node ./build/index.js"
   },
   "author": "",
