@@ -1,0 +1,16 @@
+[
+  {
+    "balance": 0,
+    "name": "Ana",
+    "cpf": 55566633320,
+    "dateOfBirth": "1995-06-22T03:00:00.000Z",
+    "statement": []
+  },
+  {
+    "balance": 0,
+    "name": "Otavio",
+    "cpf": 55533322210,
+    "dateOfBirth": "12/07/1889",
+    "statement": []
+  }
+]

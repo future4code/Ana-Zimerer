@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "tsc && node ./build/index.js",
     "build": "tsc && node ./build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^14.0.27",
+    "moment": "^2.27.0",
     "ts": "^0.2.2",
     "typescript": "^3.9.7"
   }
