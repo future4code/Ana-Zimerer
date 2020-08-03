@@ -19,8 +19,6 @@ export default class Accounts{
         this.balance=updateBalance,
         this.statement=updateStatement   
     }
-        public getBalance(): number => this.balance
-        public addBalance(value: number): void 
     
 
     //public setAccount = (accountName: string, accountCpf: number, accountDateOfBirth: any):void =>{

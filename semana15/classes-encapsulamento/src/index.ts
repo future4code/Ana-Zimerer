@@ -1,0 +1,1 @@
+//1) O construtor dentro de uma classe serve para receber as alteraçoes 
