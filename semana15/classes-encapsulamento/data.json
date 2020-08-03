@@ -12,5 +12,12 @@
     "cpf": 55533322210,
     "dateOfBirth": "12/07/1889",
     "statement": []
+  },
+  {
+    "balance": 0,
+    "name": "Larissa",
+    "cpf": 99933322210,
+    "dateOfBirth": "02/08/1997",
+    "statement": []
   }
 ]

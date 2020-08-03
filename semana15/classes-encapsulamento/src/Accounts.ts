@@ -20,6 +20,7 @@ export default class Accounts{
         this.statement=updateStatement
         
     }
+
     //public setAccount = (accountName: string, accountCpf: number, accountDateOfBirth: any):void =>{
     //    this.name= accountName;
     //    this.cpf= accountCpf;
