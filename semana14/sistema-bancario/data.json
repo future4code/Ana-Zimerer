@@ -31,7 +31,30 @@
     "name": "Renan",
     "cpf": 55566699580,
     "dateOfBirth": "22/06/2002",
-    "balance": 0,
+    "balance": 30,
     "statement": []
+  },
+  {
+    "name": "Olivia",
+    "cpf": 33336699580,
+    "dateOfBirth": "22/06/1995",
+    "balance": 78,
+    "statement": [
+      {
+        "value": 12,
+        "date": null,
+        "description": "Depósito"
+      },
+      {
+        "value": 12,
+        "date": "2020-08-03T00:58:54.565Z",
+        "description": "Depósito"
+      },
+      {
+        "value": 12,
+        "date": "02/08/2020",
+        "description": "Depósito"
+      }
+    ]
   }
 ]
