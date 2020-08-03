@@ -17,9 +17,11 @@ export default class Accounts{
         this.cpf= newCpf,
         this.dateOfBirth= newDateOfBirth,
         this.balance=updateBalance,
-        this.statement=updateStatement
-        
+        this.statement=updateStatement   
     }
+        public getBalance(): number => this.balance
+        public addBalance(value: number): void 
+    
 
     //public setAccount = (accountName: string, accountCpf: number, accountDateOfBirth: any):void =>{
     //    this.name= accountName;
