@@ -43,5 +43,4 @@ if (AgeIsValid && cpfIdValid) {
     accounts.push(newAccount);
     fileManager.writeToDatabase(accounts);
 }
-newAccount.getBalance();
 //# sourceMappingURL=createAccount.js.map

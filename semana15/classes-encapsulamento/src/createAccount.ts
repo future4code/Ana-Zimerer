@@ -25,8 +25,7 @@ const checkAdulthood= (birth: moment.Moment):boolean =>{
 	}else{
 		console.log('Conta não criada: para se cadastrar é necessário ter mais de 18 anos.')
 		return false
-	}
-	
+	}	
 }
 
 const checkIfCpfIsValid = (cpf: number):any =>{	

@@ -2,19 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Accounts {
     constructor(newName, newCpf, newDateOfBirth, updateBalance, updateStatement) {
-        this.balance = 0;
-        console.log("Chamando o construtor da classe UserAccount");
         this.name = newName,
             this.cpf = newCpf,
             this.dateOfBirth = newDateOfBirth,
-            this.balance = updateBalance,
             this.statement = updateStatement;
+        this.balance = updateBalance;
     }
     getBalance() {
         console.log(this.balance);
+        return this.balance;
     }
     addBalance(value) {
-        //Aqui deve ser inserida a lógica de adicionar saldo 
         console.log('Saldo atualizado com sucesso');
     }
 }
