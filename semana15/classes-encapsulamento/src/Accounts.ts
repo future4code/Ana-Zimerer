@@ -19,8 +19,7 @@ export default class Accounts{
         this.dateOfBirth= newDateOfBirth,
         this.statement=updateStatement 
         this.balance=updateBalance  
-    }
-    
+    }    
         public getBalance(): any {
             console.log('Seu saldo é de R$ '+ this.balance)
             return this.balance
