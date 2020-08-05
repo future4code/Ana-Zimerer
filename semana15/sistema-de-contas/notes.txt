@@ -1,0 +1,65 @@
+Sistema de contas!
+
+Clientes:
+    Residencial: 0.75 (valos s/ desconto)
+        name : string 
+        resgistrationNumber: number (um id qqr)
+        consumedEnergy: number
+        calculateBill():number (calcula a conta)
+
+    Comercial: 0.53 (desconto de 30%)
+    Industrial: 0.45 (desconto de 40%) + 100 * maquina usada
+
+Entidades: 
+    Place 
+    Client
+    Industry
+    Commerce
+    Residence
+
+1) uma classe abstrata não pode ser instanciada
+2) classes abstratas não tem implementação, ficam assim: 
+abstract getCep(): number
+3) Filhas do Place
+        Clase residencial 
+            protected qtdeMoradores
+            cep: 
+            super(cep) //vem do pai: place
+
+        Classe Commerce
+            protected qtdeDeAndares
+             cep: 
+            super(cep) //vem do pai: place
+        
+        Classe Industry
+           protected qtdeDeMaquinas
+            cep: 
+            super(cep) //vem do pai: place
+Para instancias classes pais, é necessário ter classes filhas. Estas
+serão instanciadas recebendo os parametros do pai e delas mesmas. Elas também devem 
+ter os mesmos métodos dos pais 
+
+4) As classes filhas precisam ter os metodos do pai
+
+5) 
+a) Quando temos 3 entidades diferentes:
+É interessante que cada uma delas tenham suas próprias classes com seus próprios métodos 
+b) 3 classes distintas, porém com algum parametro igual:
+
+///O que escolher? uma classe pai ou uma interface? 
+No caso de interface: as propriedades que herdam são sempre publicas
+e o cep, nesse caso, precisa ser protected, pois é um valor que não muda
+
+///O place precisa ser uma classe pois exige acesso restrito a um de seus atributos: o cep!
+Por isso foi escolhido pra ser uma classe abstrata, que não pode ser instanciada, e isso é otimo! 
+pq não precisamos mudar o valor do cep e também pq tem classes filhas com os atributos que são necessarios,
+então é só instanciar eles! Ou seja, todos os atributos já podem ser utilizados e acessados
+
+// Olha, fácil não tá não! Tem sido um trabalho de formiguinha, com muita paciência pra ler tudo com calma, pra fixar
+cada vez mais um pouquinho o conteúdo, lendo, reescrevendo os conceitos. Realmente é uma semana muito pesada, 
+dá uma boa assustada, mas confio que vai dar uma base super necessária pra gente entender como funciona todo o resto do backend. 
+Eu particularmente gosto bastante desses conteúdos com bastante teoria, então to gostando, mesmo estando difícil.
+
+6) Se não temos uma classe filha, o ideal é declarar os atributos 
+como privados. O protected só faz sentido quando filhas podem acessar
+
