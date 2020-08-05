@@ -36,3 +36,4 @@ import { Industry } from "./Industry";
 //const factory: any= new Industry(1, '333')
 //console.log(factory)
 
+//4) name, registrationNumber, consumedEnergy, cpf. Como métodos temos o calculateBill

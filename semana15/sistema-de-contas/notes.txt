@@ -55,10 +55,6 @@ Por isso foi escolhido pra ser uma classe abstrata, que não pode ser instanciad
 pq não precisamos mudar o valor do cep e também pq tem classes filhas com os atributos que são necessarios,
 então é só instanciar eles! Ou seja, todos os atributos já podem ser utilizados e acessados
 
-// Olha, fácil não tá não! Tem sido um trabalho de formiguinha, com muita paciência pra ler tudo com calma, pra fixar
-cada vez mais um pouquinho o conteúdo, lendo, reescrevendo os conceitos. Realmente é uma semana muito pesada, 
-dá uma boa assustada, mas confio que vai dar uma base super necessária pra gente entender como funciona todo o resto do backend. 
-Eu particularmente gosto bastante desses conteúdos com bastante teoria, então to gostando, mesmo estando difícil.
 
 6) Se não temos uma classe filha, o ideal é declarar os atributos 
 como privados. O protected só faz sentido quando filhas podem acessar
