@@ -34,4 +34,44 @@ const QuantityOfActorsByGender= async(gender:string): Promise<any>=>{
     console.table(result[0])
 }
 
-QuantityOfActorsByGender('male')
+//QuantityOfActorsByGender('male')
+
+const updateSalary= async(id:string, salary: number): Promise<void>=>{
+    try{
+        await connection('Actor')
+        .update({
+            salary: salary
+        })
+        .where("id", id)
+        console.log('Sucesso ao atualizar salário pelo id')
+    }catch{
+        console.log('Erro ao atualizar salário pelo id')
+    }   
+}
+//updateSalary("010", 700000)
+
+const deleteActorById=async(id:string): Promise<void>=>{
+    try{
+        await connection('Actor')
+        .delete()
+        .where("id", id)
+        console.log('Sucesso ao deletar ator')
+    }catch{
+        console.log('Erro ao deletar ator')
+    }
+}
+//deleteActorById('006')
+
+const averagesSalaryByGender= async(gender:string): Promise<any>=>{
+    try{
+        const result= await connection('Actor')
+        .avg(
+            "salary as average"
+        )
+        .where("gender", gender)
+        console.log(result)
+    }catch{
+        console.log('Erro ao atualizar salário pelo id')
+    }   
+}
+averagesSalaryByGender('male')
