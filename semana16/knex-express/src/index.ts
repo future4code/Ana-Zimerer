@@ -1,10 +1,9 @@
 import knex from "knex";
 import dotenv from "dotenv";
-//import express from "express";
-//
-//import { AddressInfo } from "net";
-//import { promises } from "fs";
-//
+import express, {Request, Response} from "express";
+
+import { AddressInfo } from "net";
+
 dotenv.config();
 
 const connection = knex({
@@ -74,4 +73,23 @@ const averagesSalaryByGender= async(gender:string): Promise<any>=>{
         console.log('Erro ao atualizar salário pelo id')
     }   
 }
-averagesSalaryByGender('male')
+//averagesSalaryByGender('male')
+
+const app = express();
+app.use(express.json())
+
+
+app.get('/actor', async (req: Request, res: Response)=>{
+    try{
+        const count = await QuantityOfActorsByGender(req.query.gender as string);
+        res.status(200).send({
+            quantity: count,
+        });        
+    }catch(error){
+        res.status(400).send({
+            message: error.message,
+        });
+    }
+})
+
+
