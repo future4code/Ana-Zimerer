@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Ana",
+    "cpf": 22233344450,
+    "dateOfBirth": "1995-06-25T03:00:00.000Z",
+    "balance": 0,
+    "statement": []
+  },
+  {
+    "name": "Otavio",
+    "cpf": 22233344450,
+    "dateOfBirth": "1995-06-25T03:00:00.000Z",
+    "balance": 0,
+    "statement": []
+  },
+  {
+    "name": "Laura",
+    "cpf": 12525395850,
+    "dateOfBirth": "22/09/1885",
+    "balance": 0,
+    "statement": []
+  },
+  {
+    "name": "Larissa",
+    "cpf": 45495095555,
+    "dateOfBirth": "25/03/1996",
+    "balance": 0,
+    "statement": []
+  },
+  {
+    "name": "Renan",
+    "cpf": 55566699580,
+    "dateOfBirth": "22/06/2002",
+    "balance": 30,
+    "statement": []
+  },
+  {
+    "name": "Olivia",
+    "cpf": 33336699580,
+    "dateOfBirth": "22/06/1995",
+    "balance": 78,
+    "statement": [
+      {
+        "value": 12,
+        "date": null,
+        "description": "Depósito"
+      },
+      {
+        "value": 12,
+        "date": "2020-08-03T00:58:54.565Z",
+        "description": "Depósito"
+      },
+      {
+        "value": 12,
+        "date": "02/08/2020",
+        "description": "Depósito"
+      }
+    ]
+  }
+]
