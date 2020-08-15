@@ -32,10 +32,10 @@ import {insertItens, searchItens} from './index';
 //    ("001", "Estudar", "Lista de Calculo 3", "to_do",Date("2020-08-18"),"001");
 //`)
 
-//searchItens(`
-//    SELECT * FROM ToDoListUser;
-//`)
-
 searchItens(`
-    SELECT * FROM ToDoListTask;
+    SELECT * FROM ToDoListUser;
 `)
+
+//searchItens(`
+//    SELECT * FROM ToDoListTask;
+//`)
