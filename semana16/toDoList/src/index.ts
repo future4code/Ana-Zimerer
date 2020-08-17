@@ -116,20 +116,19 @@ app.put("/user", async (req:Request, res:Response): Promise<void> =>{
 
 
 /* GET USER */
-async function getUserById(id: string){
+async function getUserById(id: string): Promise<any>{
 	if(id!==""){
 		try{
 			const result= await connection 
 			.select ('*') 
 			.from ('ToDoListUser')
-			.where("id", id)
-			console.log(result)
-			return result
+			.where("id", id)	
+			return result		
 		}catch(error){
 			console.log(error)
 		}
 	}else{
-		throw new Error("Id inváldo. Preencha todos os dados")
+		throw new Error("Id não recebido")
 	}
 }
 
@@ -138,7 +137,7 @@ app.get('/user/:id', async function (req: Request, res: Response) {
 		const user = await getUserById(
             req.params.id as string
 		)
-		if((req.params.id !== "") && (user !== [])){	
+		if((req.params.id !== "") && (user.length!==0)){	
 			res.status(200).send({
 				message: "Sucesso!",user
 			})	
@@ -149,4 +148,46 @@ app.get('/user/:id', async function (req: Request, res: Response) {
         console.log(error)
         res.status(400).send({ message: error.message })
     }
+})
+
+/*EDIT USER*/
+async function editUserById(id:string, newName:string, newNickname:string){
+	if(id !== ""){
+		try{
+			if (newName !== undefined){
+				await connection.raw(`
+					UPDATE ToDoListUser
+					SET name="${newName}"
+					WHERE id="${id}"
+					`)		
+			}if(newNickname !== undefined){
+				await connection.raw(`
+					UPDATE ToDoListUser
+					SET nickname="${newNickname}"
+					WHERE id="${id}"
+					`)		
+			}
+		}catch(error){	
+			console.log('Error' + error)	
+		}			
+	}else{
+		throw new Error("Id não recebido")
+	}		
+}
+
+app.post('/user/edit/:id', async function (req: Request, res: Response) {
+	if(req.body.name || req.body.nickname !== (undefined || "")){
+		try {
+			await editUserById(
+			req.params.id as string, req.body.name, req.body.nickname)
+			res.status(200).send({
+				message: "Sucesso!"
+			})	
+		} catch (error) {
+			res.status(400).send({ message: error.message })
+		}
+	}else{
+		res.status(400).send("Pelo menos um campos é obrigatório")
+	}
+	
 })
