@@ -182,7 +182,7 @@ async function createNewTask(
     	        .insert({
 					title: newTitle,
 					description: newDescription,
-					deadline: moment(newDeadline),
+					deadline: moment(newDeadline, 'DD/MM/YYYY'),
     	            creator_user_id: newCreatorUserId
     	        })
     	        .into("ToDoListTask")			
