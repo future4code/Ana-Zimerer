@@ -183,7 +183,7 @@ async function createNewTask(
 					title: newTitle,
 					description: newDescription,
 					deadline: moment(newDeadline),
-    	            creatorUserId: newCreatorUserId
+    	            creator_user_id: newCreatorUserId
     	        })
     	        .into("ToDoListTask")			
     	    console.log("Sucesso!")
