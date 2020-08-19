@@ -3,7 +3,7 @@ import Knex from 'knex';
 
 export default abstract class BaseDB{
     private static connection: Knex | null=null
-
+    
 }
 
 //(pai) BaseDatabase: var connecttion: propriedade estatica que começa sendo nula.
