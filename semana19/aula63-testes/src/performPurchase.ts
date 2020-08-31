@@ -1,9 +1,9 @@
-interface User {
+export interface User {
     name: string,
     balance: number
 }
 
-const performPurchase = (user: User, value: number): User | undefined => {
+export const performPurchase = (user: User, value: number): User | undefined => {
     if (user.balance >= value) {
         const updateUser: User = {
             name: user.name,
@@ -17,9 +17,3 @@ const performPurchase = (user: User, value: number): User | undefined => {
     }
 }
 
-const inputUser: User = {
-    name: 'Ana',
-    balance: 20
-}
-
-performPurchase(inputUser, 10)

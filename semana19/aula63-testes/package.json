@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "ex1": "ts-node ./src/exercicio1.ts"
+    "purchase": "ts-node ./src/performPurchase.ts"
   },
   "keywords": [],
   "author": "",
