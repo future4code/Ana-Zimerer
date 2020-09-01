@@ -1,19 +1,19 @@
-enum LOCATION {
+export enum LOCATION {
     BRAZIL = 'BRAZIL',
     EUA = 'EUA'
 }
 
-enum NACIONALITY {
+export enum NACIONALITY {
     BRAZILIAN = 'BRAZILIAN',
     AMERICAN = 'AMERICAN'
 }
 
-interface Casino {
+export interface Casino {
     name: string,
     country: LOCATION
 }
 
-interface User {
+export interface UserCasino {
     name: string;
     age: number,
     nacionality: NACIONALITY
@@ -40,10 +40,10 @@ let allUsers: Result = {
     }
 }
 
-const verifyAge = (casino: Casino, users: User[]): Result => {
+export const verifyAge = (casino: Casino, users: UserCasino[]): Result => {
     for (const user of users) {
-        const allowed: User[] = []
-        const unallowed: User[] = []
+        const allowed: UserCasino[] = []
+        const unallowed: UserCasino[] = []
 
         switch (casino.country) {
             case 'BRAZIL':
@@ -64,7 +64,7 @@ const verifyAge = (casino: Casino, users: User[]): Result => {
                 console.log('Incorrect country')
         }
 
-        allowed.forEach((user: User) => {
+        allowed.forEach((user: UserCasino) => {
             if (user.nacionality === NACIONALITY.BRAZILIAN) {
                 allUsers.brazilians.allowed.push(user.name)
             } else {
@@ -72,7 +72,7 @@ const verifyAge = (casino: Casino, users: User[]): Result => {
             }
         })
 
-        unallowed.forEach((user: User) => {
+        unallowed.forEach((user: UserCasino) => {
             if (user.nacionality === NACIONALITY.AMERICAN) {
                 allUsers.americans.unallowed.push(user.name)
             } else {
@@ -85,32 +85,16 @@ const verifyAge = (casino: Casino, users: User[]): Result => {
     return allUsers
 }
 
-
-const newCasino = {
-    name: 'lasvegas',
-    country: LOCATION.BRAZIL
+export const deleteUsers = () => {
+    allUsers = {
+        brazilians: {
+            allowed: [],
+            unallowed: []
+        },
+        americans: {
+            allowed: [],
+            unallowed: []
+        }
+    }
 }
-
-const newUsers = [{
-    name: 'ana',
-    age: 23,
-    nacionality: NACIONALITY.BRAZILIAN
-},
-{
-    name: 'pedro',
-    age: 9,
-    nacionality: NACIONALITY.BRAZILIAN
-},
-{
-    name: 'rafa',
-    age: 29,
-    nacionality: NACIONALITY.AMERICAN
-},
-{
-    name: 'dani',
-    age: 12,
-    nacionality: NACIONALITY.AMERICAN
-}]
-
-verifyAge(newCasino, newUsers)
 

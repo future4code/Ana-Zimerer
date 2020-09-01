@@ -30,3 +30,9 @@ não permitidos: []
 americanos 
 permitidos: []
 não permitidos: []
+
+testes:
+a)user br, casino no br 
+b)user america, casino no br
+c) 2 users br, 2 america = 19 anos, casino eua
+d) 2 users br(19 anos), 2 america(21 anos), casino eua 
