@@ -1,6 +1,6 @@
 
 import express from "express";
-import {AddressInfo} from "net";
+import { AddressInfo } from "net";
 import { userRouter } from "./router/UserRouter";
 const app = express();
 
@@ -17,3 +17,11 @@ const server = app.listen(3000, () => {
     console.error(`Falha ao rodar o servidor.`);
   }
 });
+
+
+//Faça uma função que receba duas strings e retorne true se elas forem anagramas.
+//recebe duas strings
+//desconstrui array 
+//For of 
+
+

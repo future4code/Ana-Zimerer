@@ -77,15 +77,15 @@ export class UserBusiness {
 		return { accessToken };
 	}
 
-	public async getUserById(token: string) {
-		if (!token) {
-			throw new InvalidParameterError("Missing input")
+	public async getUserById(id: string) {
+		if (!id) {
+			throw new NotFoundError("User not found")
 		}
+		const response = await this.userDatabase.getUserById(id);
 
-		const authenticationData = this.tokenGenerator.verify(token);
-		const response = await this.userDatabase.getUserById(
-			authenticationData.id,
-		);
+		if (!response) {
+			throw new NotFoundError("User not found")
+		}
 
 		return response;
 	}

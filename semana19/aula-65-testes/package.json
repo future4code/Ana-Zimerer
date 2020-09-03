@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "tsc && node ./build/index.js",
-    "start:dev": " ts-node-dev ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "start:dev": " ts-node-dev ./src/index.ts",
+    "check": "ts-node ./testeAnagrama.ts"
   },
   "author": "João Golias",
   "license": "ISC",
