@@ -24,5 +24,5 @@ describe('Test function getUserById', () => {
     })
 })
 
-//- *O código de erro está correto*
-//- *Se a mensagem está correta*
+// - *Todas as funções mockadas foram chamadas (com os inputs corretos)*
+// - *A resposta de sucesso em si*
