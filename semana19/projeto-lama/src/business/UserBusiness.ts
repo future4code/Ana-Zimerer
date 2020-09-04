@@ -1,8 +1,10 @@
+import { Authenticator } from './../services/Authenticator';
+import { User } from './../model/User';
+import { HashManager } from './../services/HashManager';
 import { UserInputDTO, LoginInputDTO } from "../model/User";
 import { UserDatabase } from "../data/UserDatabase";
 import { IdGenerator } from "../services/IdGenerator";
-import { HashManager } from "../services/HashManager";
-import { Authenticator } from "../services/Authenticator";
+
 
 export class UserBusiness {
 
@@ -23,21 +25,21 @@ export class UserBusiness {
         return accessToken;
     }
 
-    async getUserByEmail(user: LoginInputDTO) {
-
+    async getUserByEmail(input: LoginInputDTO) {
         const userDatabase = new UserDatabase();
-        const userFromDB = await userDatabase.getUserByEmail(user.email);
+        const userFromDb: User = await userDatabase.getUserByEmail(input.email);
 
         const hashManager = new HashManager();
-        const hashCompare = await hashManager.compare(user.password, userFromDB.getPassword());
+        const passwordIsCorrect = await hashManager.compare(input.password, userFromDb.getPassword())
 
-        const authenticator = new Authenticator();
-        const accessToken = authenticator.generateToken({ id: userFromDB.getId(), role: userFromDB.getRole() });
-
-        if (!hashCompare) {
-            throw new Error("Invalid Password!");
+        if (!passwordIsCorrect) {
+            throw new Error("Invalid Password")
         }
 
-        return accessToken;
+        const authenticator = new Authenticator();
+        const token = await authenticator.generateToken({ id: userFromDb.getId(), role: userFromDb.getRole() })
+
+        return token;
     }
+
 }
