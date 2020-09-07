@@ -1,3 +1,5 @@
+import { NotFoundError } from './../error/NotFoundError';
+import { InvalidParameterError } from './../error/InvalidParameterError';
 import { Authenticator } from './../services/Authenticator';
 import { User } from './../model/User';
 import { HashManager } from './../services/HashManager';
@@ -7,7 +9,6 @@ import { IdGenerator } from "../services/IdGenerator";
 
 
 export class UserBusiness {
-
     async createUser(user: UserInputDTO) {
 
         const idGenerator = new IdGenerator();
@@ -33,13 +34,16 @@ export class UserBusiness {
         const passwordIsCorrect = await hashManager.compare(input.password, userFromDb.getPassword())
 
         if (!passwordIsCorrect) {
-            throw new Error("Invalid Password")
+            throw new InvalidParameterError("Invalid Password")
         }
 
         const authenticator = new Authenticator();
-        const token = await authenticator.generateToken({ id: userFromDb.getId(), role: userFromDb.getRole() })
+        const token: string = authenticator.generateToken({ id: userFromDb.getId(), role: userFromDb.getRole() })
+
+        if (!token) {
+            throw new NotFoundError("User not fond")
+        }
 
         return token;
     }
-
 }

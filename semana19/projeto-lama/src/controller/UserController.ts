@@ -3,7 +3,6 @@ import { Request, Response } from "express";
 import { UserInputDTO, LoginInputDTO } from "../model/User";
 import { UserBusiness } from "../business/UserBusiness";
 import { BaseDatabase } from "../data/BaseDatabase";
-import { Authenticator } from '../services/Authenticator';
 
 export class UserController {
     async signup(req: Request, res: Response) {
@@ -21,7 +20,7 @@ export class UserController {
             res.status(200).send({ token });
 
         } catch (error) {
-            res.status(400).send({ error: error.message });
+            res.status(error.errorCode || 400).send({ message: error.message });
         }
 
         await BaseDatabase.destroyConnection();
@@ -35,11 +34,15 @@ export class UserController {
             }
 
             const userBusiness = new UserBusiness()
-            const token = userBusiness.getUserByEmail(input)
+            const token = await userBusiness.getUserByEmail(input)
+
+            if (!token) {
+                throw new Error("Invalid login")
+            }
 
             res.status(200).send({ token })
         } catch (error) {
-            res.status(400).send({ message: error.message })
+            res.status(error.errorCode || 400).send({ message: error.message });
         }
     }
 
