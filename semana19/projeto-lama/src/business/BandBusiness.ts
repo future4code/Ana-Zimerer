@@ -25,7 +25,7 @@ export class BandBusiness {
 
         const idGenerator = new IdGenerator()
         const id = idGenerator.generate()
-        console.log('id da business ' + id)
+
         const bandDatabase = new BandDatabase()
         await bandDatabase.createBand(input, id)
 

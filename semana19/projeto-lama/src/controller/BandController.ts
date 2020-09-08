@@ -39,8 +39,6 @@ export class BandController {
 
             const response = await bandBusiness.getBandDetails(id, name, token)
 
-            console.log('chegou na controller ' + response)
-
             res.status(200).send({ response })
 
         } catch (error) {
